@@ -53,6 +53,7 @@ function receiveMessage(event)
 {
     //if (event.origin !== "http://example.com:8080") return;
     //event.source.postMessage("hi there yourself!  the secret response is: rheeeeet!", event.origin);
+    alert('Mensagem recebida');
     XMLstr = getXMLstr(event.data);
     XML    = new xmlClass(XMLstr);
     aluno  = new alunoClass(XML);
