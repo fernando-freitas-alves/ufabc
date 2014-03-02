@@ -1,0 +1,12 @@
+#conteudo
+{
+	width: auto; /*81%*/
+}
+#conteudo tr:hover td
+{
+	background: #C0C0C0;
+}
+#conteudo tr.quadrimestre:hover td
+{
+	background: initial;
+}

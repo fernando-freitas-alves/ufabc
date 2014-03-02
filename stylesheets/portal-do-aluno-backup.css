@@ -1,0 +1,680 @@
+
+/*
+    Document   : style
+    Created on : 03/08/2011, 16:39:38
+    Author     : edgard.nogueira
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root {
+    display: block;
+}
+/*
+   style.css
+   v0.5
+   
+   Created by Edgard on 2011-10-05.
+   Copyright 2011 Edgard. All rights reserved.
+*/
+/*
+   style.css
+   v0.5
+   
+   Created by Edgard on 2011-10-05.
+   Copyright 2011 Edgard. All rights reserved.
+*/
+h1{
+	color: #0b5b3d;
+	text-align: center;
+}
+
+h2{
+  width: 100%;
+	color: #0b5b3d;
+	border-bottom: solid 1px;
+	font-size: 16px;
+}
+
+a:link{
+	color: #097c00;
+}
+a:visited{
+	color: #074500;
+}
+body{
+	background-color: #edf4ed;
+	
+	font-family: "arial";
+	
+}
+ul{
+    list-style: none;
+    font-family: "arial";
+    font-size: 16px;
+  	cursor: pointer;    
+}
+ul :link{
+	text-decoration: none;
+}
+
+
+.MenuTitulo{
+    float: right;
+    color:green;
+}
+.MenuOpc{
+}
+
+#feeds{
+	float: right;
+	padding: 20px; 
+	width: 15%;
+	font-size: 13px;
+	/*right:0;
+	border-top: solid thin green;
+	/*border: solid thin red;*/
+    /*float: right;
+	width: 20%;*/
+}
+
+#feeds h4{
+	background-image: url('/images/titulo.jpg');
+	background-repeat: repeat-x;
+	color:#dcffdc;			
+	margin: 0;	
+	font-size: 15px;
+	border-radius:1px; 
+	border: solid thin;
+	border-color:white;
+	/*#dcffdc*/
+		
+}
+#feeds span{
+	display: none;
+}
+.ui-state-highlight {
+	 border:4px dashed #fccc00;
+	 min-height:140px;
+	 margin:4px; 
+}
+
+#main{
+	margin-top: 56px;
+	width:100%;
+	border-top:solid 1px #eef4ed;
+	
+}
+#middle{
+   position: relative;
+	 margin: 0 auto;	
+	 width: 1130px;
+}
+#conteudo{
+	width: 81%;
+	float: right;
+
+	padding: 10px;
+	margin: 0 auto;		
+	font-size: 14px;
+  background-color: white;
+  box-shadow: 0px 5px 15px #BBB;
+	/*box-shadow: 0px 5px 15px #BBB;*/		 
+	
+}
+
+#conteudo table{
+  width: 100%;
+  text-align:left;
+  font-size: 13px;
+}
+
+#conteudo table th{
+  background-color: #ddd;
+}
+
+#conteudoHome{
+	width: 88%;
+	min-height:580px;
+	padding: 25px;
+	margin: 0 auto;		
+	background-color: white;
+  box-shadow: 0px 5px 15px #BBB;
+}
+#bottom{
+  display: none; /* Corrigir o posicionamento */
+  position: relative;  
+	height:30px;
+	width: 100%;
+	font-size: 13px;
+	/*background-image: url('../images/bar_bottom.jpg') ;*/	 	
+	text-align:center;	
+	
+}
+#bottom p{
+	margin-top: 2px;
+}
+#menu_lateral ul{
+	margin:0;	
+	padding:0;
+	list-style:none;
+	margin-bottom: 10px;	
+}
+
+#menu_lateral{	
+	float: left;
+	left: 10px;	
+	padding: 20px;
+	/*left:0;
+	border: solid thin green;
+	/*border: solid thin red;*/
+	/*float: left;
+	position:fixed;
+	width: 20%;*/
+}
+#menu_lateral div{
+	font-size: 12px;
+	padding: 1px;	
+	color: #0b5b3d;
+}
+#menu_lateral div:hover{
+	padding:0;
+	border-radius:1px; 
+	border: solid thin;
+	border-color:#89d189;
+	background-color: #dcffdc;
+}
+
+
+#SubMenu ul li{	
+	margin:0;	
+}
+#SubMenu li{
+	padding-left: 15px;
+	font-size: 13px;
+	padding-top:1px;
+	padding-bottom:1px;
+	margin: 3px;
+}
+#SubMenu li:hover{
+	padding:0;	
+	padding-left: 14px;
+	border-radius:1px; 
+	border: solid thin;
+	border-color:#89d189;
+	background-color: #dcffdc;
+}
+#box{
+    margin: 10px;
+    
+    border: solid thin  #348f34;    
+    /*moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;*/     
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;    
+    box-shadow: 5px 5px 5px #BBB;
+    float: left;
+    font-size: 13px;
+}
+#box:hover{
+	 background-color: #dcffdc;
+}
+#box ul{
+	width: auto;
+	padding:0px;
+	margin:0px;
+}
+
+#box li{
+		
+	margin:15px;	
+	height: 80px;
+	width: 80px;
+}
+
+#box #titulo{	
+	/*background: #348f34;*/
+	background-image: url('/images/titulo.jpg');
+	background-repeat: repeat-x;
+	color:#dcffdc;
+	left:0;
+	top:0;		
+	padding-left: 20px;		
+}
+#box #titulo:hover{
+	cursor: move;
+}
+.right .opcs{
+    float: none;
+}
+.icon{
+    text-align: center;
+    vertical-align: middle;
+    float: left;
+    margin-left: 10px;
+    width: 155px;
+    height: 120px;
+}
+
+span{
+/*	border: solid thin #055b3e;*/
+/*	border-radius:2px;*/
+/*	background: #055b3e;*/
+/*	color: #c1dbc0;*/
+/*	padding: 2px;		*/
+/*	float: left;*/
+/*	margin-top:-21px;*/
+/*	position: absolute;*/	 
+}
+
+#Feed{
+    width: 98.5%;
+    height: 400px;
+}
+
+#Ficha_individual{
+    background-image: url('../images/Ficha_.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#Ficha_individual:hover{
+    background-image: url('../images/Ficha.png') ;
+}
+#Desempenho{
+    background-image: url('../images/Desempenho_.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#Desempenho:hover{
+    background-image: url('../images/Desempenho.png') ;
+}
+#Curso{
+    background-image: url('../images/CursosMat_.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#Curso:hover{
+    background-image: url('../images/CursosMat.png') ;    
+}
+#Turmas{
+    background-image: url('../images/Turmas_.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#Turmas:hover{
+    background-image: url('../images/Turmas.png') ;
+}
+#Disciplinas{
+    background-image: url('../images/Disciplinas_.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#Disciplinas:hover{
+    background-image: url('../images/Disciplinas.png') ;    
+}
+#Cursos{
+    background-image: url('../images/Cursos_.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#Cursos:hover{
+    background-image: url('../images/Cursos.png') ;    
+}
+#Cancelamento{
+    background-image: url('../images/Cancelar_.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#Cancelamento:hover{
+    background-image: url('../images/Cancelar.png') ;    
+}
+#Bolsas{
+    background-image: url('../images/Bolsas_.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#Bolsas:hover{
+    background-image: url('../images/Bolsas.png') ;    
+}
+#Monitorias{
+    background-image: url('../images/Monitoria_.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#Monitorias:hover{
+    background-image: url('../images/Monitoria.png') ;    
+}
+#Matrícula_em_curso{
+    background-image: url('../images/AtCursos_.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#Matrícula_em_curso:hover{
+    background-image: url('../images/AtCursos.png') ; 
+}
+#Matrícula_em_turmas{
+    background-image: url('../images/AtTurmas_.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#Matrícula_em_turmas:hover{
+    background-image: url('../images/AtTurmas.png') ; 
+}
+#ToolTip{
+    font-family: "verdana";
+    font-size: large;
+    position: absolute;
+    border-bottom: solid thin black;
+    border-right: solid thin black;
+    background-color: #74B70E;
+}
+
+h3{
+    /*background-color: #74B70E;
+    cursor:  move;
+    margin-top: 0px;
+    color: #fffefe;
+    border-bottom: solid medium white;*/
+    font-size: 25px;
+    font-family: "verdana";
+    text-align: left;
+}
+.icones :hover{
+    /*Algo a fazer... */
+}
+.logo{
+    float: left;
+    padding-right: 130px;
+    border: dotted thin black;
+}
+.icones{
+    float: left;
+    margin-top: 10px;
+}
+.icones img{
+    margin-left: 20px;
+}
+
+.conteudoBar{
+    margin-left:22%;
+
+
+    height: 60px;
+}
+.conteudoBar li{
+    width: auto;
+    padding-left:10px;
+    padding-right:10px;
+    float: left;
+
+}
+
+#pesquisa{
+    margin-left: 8px;
+    font-family: "verdana";
+    font-size: 20px;
+    width: 450px;
+    height: 30px;
+    padding-left: 22px;
+    vertical-align: middle;
+    background-image: url('../img/Search-icon.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+#logo{	
+	margin-top: -15px;
+	margin-right: 30px;
+	margin-left:10px;
+	width: 150px;
+	height: 55px;	
+	background-image: url('../images/logo_aluno.jpg');
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+#top ul{
+	padding: 0;
+	margin: 0 auto;
+	list-style: none;
+	width: 1250px;
+	
+	/*border:solid thin red;*/
+}	
+#top li{
+	
+	font-family: "verdana";
+    font-size: 15px;	
+	float:left;
+	margin-right: 5px;
+	
+}
+#searchBox{
+	width: 270px;
+	margin-left: 210px;
+	margin-right: 30px;
+	border: solid thin green;
+	border-radius:4px;
+	background-image: url('/images/Search-icon.png');
+	background-repeat: no-repeat;
+	padding-left: 17px;
+}
+#top ul li {	
+	cursor: pointer;
+	float: left;	
+	display: block;
+	padding-left:8px;
+	padding-right:8px;
+	text-decoration:none;
+	text-align:center;
+	padding-top: 15px;	
+	height:40px;	
+}
+
+#top #email a{
+  width: 32px;
+  height: 32px;
+  display: block;
+  outline: none;
+}
+
+#top #perfil{
+	width: 32px;
+	margin-top:8px;	
+	background-image: url('/images/IconPerfil.png');
+	background-repeat:no-repeat;
+}
+#top #perfil:hover{
+	background-image: url('/images/IconPerfil_.png');
+}
+#top #email{
+	width: 32px;
+	margin-top:8px;
+	background-image: url('/images/IconEmail.png');
+	background-repeat:no-repeat;
+	text-indent: -99999px;
+	/*background-image: url('/images/Email.jpg');
+	background-repeat:no-repeat;
+	background-position-x: 9px;
+	background-position-y: 17px;*/
+	
+}
+#top #email:hover{
+	background-image: url('/images/IconEmail_.png');
+}
+#top #faq{
+	width: 32px;
+	margin-top:8px;
+	background-image: url('/images/IconFAQ.png');
+	background-repeat:no-repeat;
+	/*
+	background-image: url('/images/FAQ.jpg');
+	background-repeat:no-repeat;
+	background-position-x: 9px;
+	background-position-y: 4px;*/	
+}
+#top #faq:hover{
+	background-image: url('/images/IconFAQ_.png');
+}
+#top #contatos{
+	width: 32px;
+	margin-top:8px;
+	background-image: url('/images/IconContatos.png');
+	background-repeat:no-repeat;
+	/*
+	background-image: url('/images/Contatos.jpg');
+	background-repeat:no-repeat;
+	background-position-x: 9px;
+	background-position-y: 11px;
+	*/
+}
+#top #contatos:hover{
+	background-image: url('/images/IconContatos_.png');
+}
+#top li:hover{
+	
+}
+#top{
+    
+    /*background: rgb(41,154,11);*/
+    /*background: -moz-linear-gradient(top, rgba(41,154,11,1) 0%, rgba(116,183,14,1) 76%); /* FF3.6+ */
+    /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(41,154,11,1)), color-stop(76%,rgba(116,183,14,1))); /* Chrome,Safari4+ */
+    /*background: -webkit-linear-gradient(top, rgba(41,154,11,1) 0%,rgba(116,183,14,1) 76%); /* Chrome10+,Safari5.1+ */
+    /*background: -o-linear-gradient(top, rgba(41,154,11,1) 0%,rgba(116,183,14,1) 76%); /* Opera11.10+ */
+    /*background: -ms-linear-gradient(top, rgba(41,154,11,1) 0%,rgba(116,183,14,1) 76%); /* IE10+ */
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#299a0b', endColorstr='#74b70e',GradientType=0 ); /* IE6-9 */
+    /*background: linear-gradient(top, rgba(41,154,11,1) 0%,rgba(116,183,14,1) 76%); /* W3C */
+    
+    background-image: url('../images/top_background.jpg');
+    background-repeat:repeat-x;   
+    
+    left: 0;
+    top: 0;
+    position: absolute;
+	margin: 0 auto;
+	width: 99.9%;        
+    height: 55px;    
+	border-bottom: solid 1px #82b980;
+
+}
+.sombra{	
+	font-family: Verdana;
+	position: absolute;
+	font-size: 15px;
+	color: #ffffff;
+	top:5px;
+	margin-left:65px;
+	padding:0;
+	font-style: italic;
+	font-weight: bold;
+}
+.texto{	
+	margin:0;
+	padding:0;
+	font-size: 32px;
+	position: absolute;		
+	top:10px;
+	color: #015a3c;	
+	font-style: italic;
+	font-weight: bold;
+}
+
+/* Ficha individual do aluno */
+#conteudo table.ficha_individual{
+  width: 100%;
+  padding: 5px;
+  border-bottom: solid 2px;
+  font-size: 12px;
+}
+
+#conteudo table.ficha_individual th{
+  text-align: center;
+}
+
+#conteudo table.ficha_individual td{
+  border-bottom: dashed 1px #aaa;
+  text-align: center;
+}
+
+#conteudo table.ficha_individual td.ano_periodo{
+  text-align: center;
+  padding-top: 15px;
+  font-weight:bold;
+  border-bottom: dotted 1px;
+}
+
+#conteudo table.ficha_individual tr.cabecalho{
+  background-color: #ddd;
+}
+
+#conteudo table.coeficientes{
+  margin-top: 5px;
+  padding: 5px;
+  text-align: left;
+  border-bottom: solid 2px;
+  width: 100%;
+  font-size: 11px;
+}
+
+
+#conteudo table.coeficientes td{
+  font-size: 24px;
+  color: #0b5b3d;
+  font-weight: bold;
+}
+
+#conteudo table.quantidades{
+  margin-top: 5px;
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+  font-size: 11px;
+}
+
+#conteudo table.quantidades th{
+  background-color: #e0e0e0;
+}
+
+#conteudo table.quantidades td.tipo{
+  text-align: left;
+}
+
+#conteudo table.quantidades td.tipo{
+  text-align: left;
+}
+
+#conteudo table.quantidades tr.total{
+  font-weight:bold;
+}
+#busca_funcionario{
+  clear:both;
+  text-align: center;
+  padding: 0;
+}
+
+.ui-widget-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; }
+.ui-widget-overlay { background: black 50% 50% repeat-x; opacity: .50;filter:Alpha(Opacity=50); }
+
+.ui-widget {
+  background-color: white;
+  border:solid 5px #c1dbc0;
+}
+
+.ui-dialog-content {
+}
+
+.ui-dialog-titlebar {
+  color: white;
+  background-color: green;
+}
+
+/*.ui-icon-closethick {*/
+/*  text-align: center !important;*/
+/*  background-color: red;*/
+/*/*  float: right;*/*/
+/*  color: white;*/
+/*}*/
