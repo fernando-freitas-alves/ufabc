@@ -27,14 +27,14 @@ function receiveMessage(event)
 {
     //if (event.origin !== "http://example.com:8080") return;
     //event.source.postMessage("hi there yourself!  the secret response is: rheeeeet!", event.origin);
-    alert('Mensagem recebida');
+    pm = document.getElementById('postMs');
+    pm.innerHTML = 'Mensagem recebida';
+    //alert('Mensagem recebida');
     XMLstr = getXMLstr(event.data);
     XML    = new xmlClass(XMLstr);
     aluno  = new alunoClass(XML);
     fillData(aluno);
     changeRowColor(aluno.nome);
-    event.source.postMessage('Page opened', event.origin);
-
 }
 
 function sendMessage(message, targetOrigin)
@@ -54,15 +54,26 @@ onload = function()
     changeRowColor(aluno.nome);
     */
     // type, id, title, className, innerHTML, onclick, target, before, after
-    insertElement('button',
-                  'post',
-                  null,
-                  null,
-                  'Enviar',
-                  sendMessage,
-                  'conteudo',
-                  'page',
-                  null);
+    bt = insertElement('button',
+                       'postBt',
+                       null,
+                       null,
+                       'Enviar',
+                       sendMessage,
+                       'conteudo',
+                       'page',
+                       null);
+    pm = insertElement('span',
+                       'postMs',
+                       null,
+                       null,
+                       '',
+                       null,
+                       'conteudo',
+                       'page',
+                       null);
+    window.postMessage('Page opened', 'http://aluno.ufabc.edu.br/ficha_individual/12856');
+    pm.innerHTML = 'Mensagem enviada';
 }
 
 function getXMLstr(data)
