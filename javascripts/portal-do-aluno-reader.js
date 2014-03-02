@@ -4,6 +4,8 @@ xml64  = 'PGFsdW5vPjxub21lPkZlcm5hbmRvIEZyZWl0YXMgQWx2ZXM8L25vbWU+PGVtYWlsPmZlcm
 loadScript('javascripts/URI.js', null);
 loadScript('javascripts/jx.js',  null);
 
+window.addEventListener("message", receiveMessage, false);
+
 function loadScript(url, callback)
 {
     // Adding the script tag to the head as suggested before
@@ -60,8 +62,6 @@ function receiveMessage(event)
     fillData(aluno);
     changeRowColor(aluno.nome);
 }
-
-window.addEventListener("message", receiveMessage, false);
 
 function getXMLstr(data)
 {
