@@ -23,6 +23,27 @@ function loadScript(url, callback)
     head.appendChild(script);
 }
 
+function receiveMessage(event)
+{
+    //if (event.origin !== "http://example.com:8080") return;
+    //event.source.postMessage("hi there yourself!  the secret response is: rheeeeet!", event.origin);
+    alert('Mensagem recebida');
+    XMLstr = getXMLstr(event.data);
+    XML    = new xmlClass(XMLstr);
+    aluno  = new alunoClass(XML);
+    fillData(aluno);
+    changeRowColor(aluno.nome);
+    event.source.postMessage('Page opened', event.origin);
+
+}
+
+function sendMessage(message, targetOrigin)
+{
+    message      = 'teste=1&aluno=' + encodeURIComponent(xml64) + '&abc=123';
+    targetOrigin = '*';
+    window.postMessage(message, targetOrigin);
+}
+
 onload = function()
 {
     /*
@@ -42,25 +63,6 @@ onload = function()
                   'conteudo',
                   'page',
                   null);
-}
-
-function sendMessage(message, targetOrigin)
-{
-    message      = 'teste=1&aluno=' + encodeURIComponent(xml64) + '&abc=123';
-    targetOrigin = '*';
-    window.postMessage(message, targetOrigin);
-}
-
-function receiveMessage(event)
-{
-    //if (event.origin !== "http://example.com:8080") return;
-    //event.source.postMessage("hi there yourself!  the secret response is: rheeeeet!", event.origin);
-    alert('Mensagem recebida');
-    XMLstr = getXMLstr(event.data);
-    XML    = new xmlClass(XMLstr);
-    aluno  = new alunoClass(XML);
-    fillData(aluno);
-    changeRowColor(aluno.nome);
 }
 
 function getXMLstr(data)
