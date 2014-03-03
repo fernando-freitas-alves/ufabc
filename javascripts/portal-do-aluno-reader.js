@@ -39,12 +39,16 @@ function receiveMessage(event)
         console.log('Origem desconhecida.');
         return;
     }
-    console.log('Origem conhecida.');
-    console.log('Carregado dados...');
-    loadFromRaw(event.data);
-    console.log('Dados recebidos com sucesso.');
-    event.source.postMessage('Page opened', event.origin);
-    console.log('Mensagem eviada ao remetente.');
+    if (event.data != 'Done')
+    {
+        console.log('Origem conhecida.');
+        console.log('Carregado dados...');
+        loadFromRaw(event.data);
+        console.log('Dados recebidos com sucesso.');
+        event.source.postMessage('Page opened', event.origin);
+        console.log('Mensagem eviada ao remetente.');
+    }
+    else console.log('Recibo de conclusão recebido.');
 }
 
 function loadFromRaw(raw)
