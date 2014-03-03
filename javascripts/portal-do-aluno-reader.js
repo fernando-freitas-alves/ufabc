@@ -86,7 +86,7 @@ function loadFromData(data)
 
 function setStaticState()
 {
-    fade.className = '';
+    fade.className = 'static';
     fade.onclick   = null;
 }
 
