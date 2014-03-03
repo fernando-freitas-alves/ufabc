@@ -32,13 +32,12 @@ onload = function()
 {
     fade = document.getElementById('fade');
     fade.onclick = openPortal;
+    window.setTimeout(function()
+    {
+        fade.className = 'fade';
+    }, 1000);
     console.log('[PÁGINA INICIADA COM SUCESSO]');
 }
-
-window.setTimeout(function()
-{
-    fade.className = 'fade';
-}, 1000);
 
 function openPortal()
 {
