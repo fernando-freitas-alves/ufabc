@@ -41,7 +41,7 @@ onload = function()
 
 function openPortal()
 {
-    portal   = window.open(portal_url, 'portal', 'height=500,width=345');
+    portal   = window.open(portal_url, 'portal', 'width=500,height=345');
     portal.focus();
     timedMsg = setInterval(sendIntervalMessage, 1000);
     console.log('Envio repetitivo de mensagem iniciado.');
