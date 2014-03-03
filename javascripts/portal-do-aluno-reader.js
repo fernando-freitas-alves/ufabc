@@ -41,7 +41,8 @@ onload = function()
 
 function openPortal()
 {
-    portal   = window.open(portal_url);
+    portal   = window.open(portal_url, 'portal', 'height=200,width=150');
+    portal.focus();
     timedMsg = setInterval(sendIntervalMessage, 1000);
     console.log('Envio repetitivo de mensagem iniciado.');
 }
@@ -77,7 +78,13 @@ function receiveMessage(event)
         loadFromRaw(event.data);
         console.log('Dados recebidos com sucesso.');
         event.source.postMessage('Page opened', event.origin);
-        console.log('Mensagem eviada ao remetente.');
+        console.log('Mensagem enviada ao remetente.');
+        if (portal !== null)
+        {
+            portal = null;
+            event.source.postMessage('Close page', event.origin);
+            console.log('Mensagem enviada para fechar janela.');
+        }
     }
 }
 
