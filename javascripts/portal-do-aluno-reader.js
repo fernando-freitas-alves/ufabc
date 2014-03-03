@@ -35,6 +35,9 @@ function receiveMessage(event)
     aluno  = new alunoClass(XML);
     fillData(aluno);
     changeRowColor(aluno.nome);
+    event.source.postMessage('Page opened', event.origin);
+    pm = document.getElementById('postMs');
+    if (pm !== null) pm.innerHTML = 'Mensagem enviada';
 }
 
 function sendMessage(message, targetOrigin)
@@ -72,8 +75,7 @@ onload = function()
                        'conteudo',
                        'page',
                        null);
-    window.postMessage('Page opened', 'http://aluno.ufabc.edu.br/ficha_individual/12856');
-    pm.innerHTML = 'Mensagem enviada';
+    //window.postMessage('Page opened', 'http://aluno.ufabc.edu.br/ficha_individual/12856');
 }
 
 function getXMLstr(data)
