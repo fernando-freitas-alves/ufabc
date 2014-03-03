@@ -29,7 +29,7 @@ function receiveMessage(event)
     //event.source.postMessage("hi there yourself!  the secret response is: rheeeeet!", event.origin);
     pm = document.getElementById('postMs');
     pm.innerHTML = 'Mensagem recebida';
-    //alert('Mensagem recebida');
+    alert(event.data);
     XMLstr = getXMLstr(event.data);
     XML    = new xmlClass(XMLstr);
     aluno  = new alunoClass(XML);
