@@ -34,14 +34,15 @@ function loadScript(url, callback)
 function receiveMessage(event)
 {
     console.log('Mensagem recebida.');
+    console.log('Origem: ' + event.origin);
     if (event.origin !== 'http://aluno.ufabc.edu.br')
     {
-        console.log('Origem desconhecida.');
+        console.log('Site desconhecido.');
         return;
     }
+    console.log('Site conhecido.');
     if (event.data != 'Done')
     {
-        console.log('Origem conhecida.');
         console.log('Carregado dados...');
         loadFromRaw(event.data);
         console.log('Dados recebidos com sucesso.');
