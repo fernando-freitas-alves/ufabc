@@ -20,10 +20,14 @@ function sendMessage(message, targetOrigin)
 onload = function()
 {
     fade = document.getElementById('fade');
-    fade.className = 'fade';
     fade.onclick = openPortal;
     console.log('[PÁGINA INICIADA COM SUCESSO]');
 }
+
+window.setTimeout(function()
+{
+    fade.className = 'fade';
+}, 1000);
 
 function openPortal()
 {
