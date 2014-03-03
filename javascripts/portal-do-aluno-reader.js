@@ -66,7 +66,7 @@ function receiveMessage(event)
         console.log('Mensagem de conclusão recebido.');
     else if (event.data == 'Page opened')
     {
-        portal.postMessage('Done', targetOrigin);
+        portal.postMessage('Done', event.origin);
         console.log('Mensagem de conclusão enviada.');
         clearInterval(timedMsg);
         console.log('Envio repetitivo de mensagem cancelado com sucesso.');
