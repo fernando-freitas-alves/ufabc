@@ -14,4 +14,9 @@
 {
    opacity: .4;
    cursor:  pointer;
+   -webkit-filter: blur(2px);  /* Safari and Chrome */
+      -moz-filter: blur(2px);  /* Firefox */
+       -ms-filter: blur(2px);  /* Internet Explorer */
+        -o-filter: blur(2px);  /* Opera */
+           filter: blur(2px);
 }
