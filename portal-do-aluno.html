@@ -7,131 +7,134 @@
   <link rel="stylesheet" href="stylesheets/portal-do-aluno-backup.css">
   <link rel="stylesheet" href="http://aluno.ufabc.edu.br/stylesheets/style.css">
   <link rel="stylesheet" href="stylesheets/portal-do-aluno-modificada.css">
+  <link rel="stylesheet" href="stylesheets/fade.css">
   <script type="text/javascript" src="javascripts/portal-do-aluno-reader.js"></script>
 </head>
 <body>
   <!-- Conteúdo -->
   <div id="conteudo">
-    <div id="page">
-      <h2>Ficha individual de aluno (Bacharelado em Ciência e Tecnologia)</h2>
-      <p>
-        Esta Ficha Individual é um documento destinado apenas para consulta, e
-        devido às características do projeto pedagógico, as informações aqui
-        contidas poderão ser alteradas conforme ditarem as Resoluções dos Conselhos
-        superiores da UFABC. Em caso de dúvida, contatar a Secretaria Acadêmica.
-      </p>
-      <p>
-        Deve ser ressaltado que esta Ficha Individual refere-se aos
-        Bacharelados Interdisciplinares (BCT ou BCH) e limita-se às
-        disciplinas cursadas pelo aluno até o período de conclusão nestes
-        cursos. As Fichas referentes aos cursos específicos também serão
-        disponibilizadas futuramente neste Portal.
-      </p>
-      <p><b>Nome: </b><span id="nome"></span></p>
-      <p>
-        <b>RA: </b><span id="RA"></span>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <b>Curso: </b><span id="curso"></span>
-      </p>
+    <div id="fade" class="fade">
+      <div id="page">
+        <h2>Ficha individual de aluno (Bacharelado em Ciência e Tecnologia)</h2>
+        <p>
+          Esta Ficha Individual é um documento destinado apenas para consulta, e
+          devido às características do projeto pedagógico, as informações aqui
+          contidas poderão ser alteradas conforme ditarem as Resoluções dos Conselhos
+          superiores da UFABC. Em caso de dúvida, contatar a Secretaria Acadêmica.
+        </p>
+        <p>
+          Deve ser ressaltado que esta Ficha Individual refere-se aos
+          Bacharelados Interdisciplinares (BCT ou BCH) e limita-se às
+          disciplinas cursadas pelo aluno até o período de conclusão nestes
+          cursos. As Fichas referentes aos cursos específicos também serão
+          disponibilizadas futuramente neste Portal.
+        </p>
+        <p><b>Nome: </b><span id="nome"></span></p>
+        <p>
+          <b>RA: </b><span id="RA"></span>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <b>Curso: </b><span id="curso"></span>
+        </p>
 
-      <!-- Disciplinas -->
-      <table class="ficha_individual">
-        <tr class="cabecalho">
-          <th>CÓDIGO</th>
-          <th>DISCIPLINA</th>
-          <th>CRÉDITOS</th>
-          <th>CONCEITO</th>
-          <th>SITUAÇÃO</th>
-          <th>CATEGORIA</th>
-        </tr>
-      </table>
+        <!-- Disciplinas -->
+        <table class="ficha_individual">
+          <tr class="cabecalho">
+            <th>CÓDIGO</th>
+            <th>DISCIPLINA</th>
+            <th>CRÉDITOS</th>
+            <th>CONCEITO</th>
+            <th>SITUAÇÃO</th>
+            <th>CATEGORIA</th>
+          </tr>
+        </table>
 
-      <!-- Coeficientes -->
-      <table class="coeficientes">
-        <tr>
-          <th>Coeficiente de progressão (CP)</th>
-          <th>Coeficiente de rendimento (CR)</th>
-          <th>Coeficiente de aproveitamento (CA)</th>
-        </tr>
-        <tr>
-          <td><span id="cp"></span></td>
-          <td><span id="cr"></span></td>
-          <td><span id="ca"></span></td>
-        </tr>
-      </table>
+        <!-- Coeficientes -->
+        <table class="coeficientes">
+          <tr>
+            <th>Coeficiente de progressão (CP)</th>
+            <th>Coeficiente de rendimento (CR)</th>
+            <th>Coeficiente de aproveitamento (CA)</th>
+          </tr>
+          <tr>
+            <td><span id="cp"></span></td>
+            <td><span id="cr"></span></td>
+            <td><span id="ca"></span></td>
+          </tr>
+        </table>
 
-      <!-- Quantidades gerais -->
-      <table class="quantidades">
-        <tr>
-          <th>Situação</th>
-          <th>Quantidade</th>
-          <th>Créditos</th>
-          <th>Carga Horária</th>
-        </td>
-        <tr>
-          <td class="tipo">APROVADO</td>
-          <td><span id="aprovado_quantidade"   ></span></td>
-          <td><span id="aprovado_creditos"     ></span></td>
-          <td><span id="aprovado_carga_horaria"></span></td>
-        </tr>
-        <tr>
-          <td class="tipo">REPROV. FREQ.</td>
-          <td><span id="reprov_freq_quantidade"   ></span></td>
-          <td><span id="reprov_freq_creditos"     ></span></td>
-          <td><span id="reprov_freq_carga_horaria"></span></td>
-        </tr>
-        <tr>
-          <td class="tipo">REPROVADO</td>
-          <td><span id="reprovado_quantidade"   ></span></td>
-          <td><span id="reprovado_creditos"     ></span></td>
-          <td><span id="reprovado_carga_horaria"></span></td>
-        </tr>
-        <tr>
-          <td class="tipo">TRANCAMENTO</td>
-          <td><span id="trancamento_quantidade"   ></span></td>
-          <td><span id="trancamento_creditos"     ></span></td>
-          <td><span id="trancamento_carga_horaria"></span></td>
-        </tr>
-      </table>
+        <!-- Quantidades gerais -->
+        <table class="quantidades">
+          <tr>
+            <th>Situação</th>
+            <th>Quantidade</th>
+            <th>Créditos</th>
+            <th>Carga Horária</th>
+          </td>
+          <tr>
+            <td class="tipo">APROVADO</td>
+            <td><span id="aprovado_quantidade"   ></span></td>
+            <td><span id="aprovado_creditos"     ></span></td>
+            <td><span id="aprovado_carga_horaria"></span></td>
+          </tr>
+          <tr>
+            <td class="tipo">REPROV. FREQ.</td>
+            <td><span id="reprov_freq_quantidade"   ></span></td>
+            <td><span id="reprov_freq_creditos"     ></span></td>
+            <td><span id="reprov_freq_carga_horaria"></span></td>
+          </tr>
+          <tr>
+            <td class="tipo">REPROVADO</td>
+            <td><span id="reprovado_quantidade"   ></span></td>
+            <td><span id="reprovado_creditos"     ></span></td>
+            <td><span id="reprovado_carga_horaria"></span></td>
+          </tr>
+          <tr>
+            <td class="tipo">TRANCAMENTO</td>
+            <td><span id="trancamento_quantidade"   ></span></td>
+            <td><span id="trancamento_creditos"     ></span></td>
+            <td><span id="trancamento_carga_horaria"></span></td>
+          </tr>
+        </table>
 
-      <!-- Quantidades aprovadas -->
-      <table class="quantidades">
-        <tr>
-          <th>Tipo de disciplina</th>
-          <th>Quantidade</th>
-          <th>Créditos</th>
-          <th>% Concluída</th>
-          <th>Carga horária</th>
-        </tr>
-        <tr>
-          <td class="tipo">LIVRE</td>
-          <td><span id="livre_quantidade"   ></span></td>
-          <td><span id="livre_creditos"     ></span></td>
-          <td><span id="livre_p_concluida"  ></span></td>
-          <td><span id="livre_carga_horaria"></span></td>
-        </tr>
-        <tr>
-          <td class="tipo">OBRIGATÓRIA</td>
-          <td><span id="obrigatoria_quantidade"   ></span></td>
-          <td><span id="obrigatoria_creditos"     ></span></td>
-          <td><span id="obrigatoria_p_concluida"  ></span></td>
-          <td><span id="obrigatoria_carga_horaria"></span></td>
-        </tr>
-        <tr>
-          <td class="tipo">OPÇÃO LIMITADA</td>
-          <td><span id="opcao_limitada_quantidade"   ></span></td>
-          <td><span id="opcao_limitada_creditos"     ></span></td>
-          <td><span id="opcao_limitada_p_concluida"  ></span></td>
-          <td><span id="opcao_limitada_carga_horaria"></span></td>
-        </tr>
-        <tr class="total">
-          <td class="tipo">TOTAL</td>
-          <td><span id="total_quantidade"   ></span></td>
-          <td><span id="total_creditos"     ></span></td>
-          <td><span id="total_p_concluida"  ></span></td>
-          <td><span id="total_carga_horaria"></span></td>
-        </tr>
-      </table>
+        <!-- Quantidades aprovadas -->
+        <table class="quantidades">
+          <tr>
+            <th>Tipo de disciplina</th>
+            <th>Quantidade</th>
+            <th>Créditos</th>
+            <th>% Concluída</th>
+            <th>Carga horária</th>
+          </tr>
+          <tr>
+            <td class="tipo">LIVRE</td>
+            <td><span id="livre_quantidade"   ></span></td>
+            <td><span id="livre_creditos"     ></span></td>
+            <td><span id="livre_p_concluida"  ></span></td>
+            <td><span id="livre_carga_horaria"></span></td>
+          </tr>
+          <tr>
+            <td class="tipo">OBRIGATÓRIA</td>
+            <td><span id="obrigatoria_quantidade"   ></span></td>
+            <td><span id="obrigatoria_creditos"     ></span></td>
+            <td><span id="obrigatoria_p_concluida"  ></span></td>
+            <td><span id="obrigatoria_carga_horaria"></span></td>
+          </tr>
+          <tr>
+            <td class="tipo">OPÇÃO LIMITADA</td>
+            <td><span id="opcao_limitada_quantidade"   ></span></td>
+            <td><span id="opcao_limitada_creditos"     ></span></td>
+            <td><span id="opcao_limitada_p_concluida"  ></span></td>
+            <td><span id="opcao_limitada_carga_horaria"></span></td>
+          </tr>
+          <tr class="total">
+            <td class="tipo">TOTAL</td>
+            <td><span id="total_quantidade"   ></span></td>
+            <td><span id="total_creditos"     ></span></td>
+            <td><span id="total_p_concluida"  ></span></td>
+            <td><span id="total_carga_horaria"></span></td>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
 </body>

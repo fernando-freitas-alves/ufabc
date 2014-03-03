@@ -1,0 +1,17 @@
+.fade
+{
+   background-color: white;
+   padding: 10px;
+   opacity: 1;
+   -webkit-transition: opacity .4s ease-in-out;  /* Safari and Chrome */
+      -moz-transition: opacity .4s ease-in-out;  /* Firefox */
+       -ms-transition: opacity .4s ease-in-out;  /* Internet Explorer */
+        -o-transition: opacity .4s ease-in-out;  /* Opera */
+           transition: opacity .4s ease-in-out;  
+}
+
+.fade:hover
+{
+   opacity: .4;
+   cursor:  pointer;
+}

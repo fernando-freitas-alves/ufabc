@@ -1,6 +1,8 @@
 #conteudo
 {
-	width: auto; /*81%*/
+	width:      auto;                                                /* 81%   */
+	padding:    0px;                                                 /* 10px  */
+   	background: black url(../img/refresh-200.png) center no-repeat;  /* white */
 }
 #conteudo tr:hover td
 {
