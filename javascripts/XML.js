@@ -73,13 +73,13 @@ function xmlClass(str)
     this.loadXML(str);
 }
 
-function importXML(xmlfile)
+function importXML(xmlFile)
 {
-    var xmlDoc, xmlloaded;
+    var xmlDOC, xmlLoaded;
     try
     {
         var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", xmlfile, false);
+        xmlhttp.open("GET", xmlFile, false);
     }
     catch (Exception)
     {
@@ -87,33 +87,33 @@ function importXML(xmlfile)
 
         if (ie)
         {
-            xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
-            xmlDoc.async = false;
-            while(xmlDoc.readyState != 4) {};
-            xmlDoc.load(xmlfile);
-            readXML();
-            xmlloaded = true;
+            xmlDOC = new ActiveXObject("Microsoft.XMLDOM");
+            xmlDOC.async = false;
+            while(xmlDOC.readyState != 4) {};
+            xmlDOC.load(xmlFile);
+            //readXML();
+            xmlLoaded = true;
         }
         else
         {
-            xmlDoc = document.implementation.createDocument("", "", null);
-            xmlDoc.onload = readXML;
-            xmlDoc.load(xmlfile);
-            xmlloaded = true;
+            xmlDOC = document.implementation.createDocument("", "", null);
+            //xmlDOC.onload = readXML;
+            xmlDOC.load(xmlFile);
+            xmlLoaded = true;
         }
     }
 
-    if (!xmlloaded)
+    if (!xmlLoaded)
     {
         xmlhttp.setRequestHeader('Content-Type', 'text/xml')
         xmlhttp.send("");
-        xmlDoc = xmlhttp.responseXML;
-        readXML();
-        xmlloaded = true;
+        xmlDOC = xmlhttp.responseXML;
+        //readXML();
+        xmlLoaded = true;
     }
 
-    if(xmlloaded) return xmlDoc;
-    else          return null;
+    if (xmlLoaded) return xmlDOC;
+    else           return null;
 }
 
 function parseXML(s)
