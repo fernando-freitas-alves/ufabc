@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graduacao>
+  <cursos tipo="Cursos de Ingresso">
+    <curso>
+      <nome>Bacharelado em Ciência e Tecnologia</nome>
+      <arquivo></arquivo>
+    </curso>
+    <curso>
+      <nome>Bacharelado em Ciências e Humanidades</nome>
+      <arquivo></arquivo>
+    </curso>
+  </cursos>
+  <cursos tipo="Engenharias">
+    <curso>
+      <nome>ENGENHARIAS</nome>
+      <arquivo>Engenharias.xml</arquivo>
+    </curso>
+    <curso>
+      <nome>Engenharia Aeroespacial</nome>
+      <arquivo>Aeroespacial.xml</arquivo>
+    </curso>
+    <curso>
+      <nome>Engenharia Ambiental e Urbana</nome>
+      <arquivo>Ambiental.xml</arquivo>
+    </curso>
+    <curso>
+      <nome>Engenharia Biomédica</nome>
+      <arquivo>Biomédica.xml</arquivo>
+    </curso>
+    <curso>
+      <nome>Engenharia de Energia</nome>
+      <arquivo>Energia.xml</arquivo>
+    </curso>
+    <curso>
+      <nome>Engenharia de Gestão</nome>
+      <arquivo>Gestão.xml</arquivo>
+    </curso>
+    <curso>
+      <nome>Engenharia de Instrumentação, Automação e Robótica</nome>
+      <arquivo>IAR.xml</arquivo>
+    </curso>
+    <curso>
+      <nome>Engenharia de Informação</nome>
+      <arquivo>Informação.xml</arquivo>
+    </curso>
+    <curso>
+      <nome>Engenharia de Materiais</nome>
+      <arquivo>Materiais.xml</arquivo>
+    </curso>
+  </cursos>
+  <cursos tipo="Bacharelados">
+    <curso>
+      <nome>Bacharelado em Ciências Biológicas</nome>
+      <arquivo></arquivo>
+    </curso>
+    <curso>
+      <nome>Bacharelado em Ciência da Computação</nome>
+      <arquivo></arquivo>
+    </curso>
+    <curso>
+      <nome>Bacharelado em Física</nome>
+      <arquivo></arquivo>
+    </curso>
+    <curso>
+      <nome>Bacharelado em Matemática</nome>
+      <arquivo></arquivo>
+    </curso>
+    <curso>
+      <nome>Bacharelado em Química</nome>
+      <arquivo></arquivo>
+    </curso>
+    <curso>
+      <nome>Bacharelado em Neurociência</nome>
+      <arquivo></arquivo>
+    </curso>
+    <curso>
+      <nome>Bacharelado em Filosofia</nome>
+      <arquivo></arquivo>
+    </curso>
+    <curso>
+      <nome>Bacharelado em Ciências Econômicas</nome>
+      <arquivo></arquivo>
+    </curso>
+    <curso>
+      <nome>Bacharelado em Planejamento Territorial</nome>
+      <arquivo></arquivo>
+    </curso>
+    <curso>
+      <nome>Bacharelado em Políticas Públicas</nome>
+      <arquivo></arquivo>
+    </curso>
+    <curso>
+      <nome>Bacharelado em Relações Internacionais</nome>
+      <arquivo></arquivo>
+    </curso>
+  </cursos>
+  <cursos tipo="Licenciaturas">
+    <curso>
+      <nome>Licenciatura em Ciências Biológicas</nome>
+      <arquivo></arquivo>
+    </curso>
+    <curso>
+      <nome>Licenciatura em Física</nome>
+      <arquivo></arquivo>
+    </curso>
+    <curso>
+      <nome>Licenciatura em Matemática</nome>
+      <arquivo></arquivo>
+    </curso>
+    <curso>
+      <nome>Licenciatura em Química</nome>
+      <arquivo></arquivo>
+    </curso>
+    <curso>
+      <nome>Licenciatura em Filosofia</nome>
+      <arquivo></arquivo>
+    </curso>
+  </cursos>
+</graduacao>

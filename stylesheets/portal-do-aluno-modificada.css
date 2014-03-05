@@ -6,9 +6,11 @@
 }
 #conteudo tr:hover td
 {
+    color:      #FFFFFF;
 	background: #C0C0C0;
 }
 #conteudo tr.quadrimestre:hover td
 {
+    color:      initial;
 	background: initial;
 }
