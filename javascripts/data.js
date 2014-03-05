@@ -34,7 +34,7 @@ function getHashFromRaw(data)
 
 function atualizarCursos()
 {
-    XML    = importXML('cursos.xml');
+    XML    = importXML('xml/cursos.xml');
     cursos = new cursoClass(XML);
     updateForms();
 }
