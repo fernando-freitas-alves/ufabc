@@ -1,200 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <graduacao>
-  <tipo nome="Cursos de Ingresso">
+  <cursos tipo="Cursos de Ingresso">
     <curso>
       <nome>Bacharelado em Ciência e Tecnologia</nome>
       <arquivo></arquivo>
-      <N_obg>90</N_obg>
-      <N_lim>57</N_lim>
-      <N_livre>43</N_livre>
     </curso>
     <curso>
       <nome>Bacharelado em Ciências e Humanidades</nome>
       <arquivo></arquivo>
-      <N_obg>72</N_obg>
-      <N_lim>80</N_lim>
-      <N_livre>38</N_livre>
     </curso>
-  </tipo>
-  <tipo nome="Engenharias">
+  </cursos>
+  <cursos tipo="Engenharias">
     <curso>
-      <nome>Engenharias</nome>
+      <nome>ENGENHARIAS</nome>
       <arquivo>Engenharias.xml</arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
     </curso>
     <curso>
       <nome>Engenharia Aeroespacial</nome>
       <arquivo>Aeroespacial.xml</arquivo>
-      <N_obg>202</N_obg>
-      <N_lim>68</N_lim>
-      <N_livre>30</N_livre>
     </curso>
     <curso>
       <nome>Engenharia Ambiental e Urbana</nome>
       <arquivo>Ambiental.xml</arquivo>
-      <N_obg>193</N_obg>
-      <N_lim>76</N_lim>
-      <N_livre>31</N_livre>
     </curso>
     <curso>
       <nome>Engenharia Biomédica</nome>
       <arquivo>Biomédica.xml</arquivo>
-      <N_obg>196</N_obg>
-      <N_lim>74</N_lim>
-      <N_livre>30</N_livre>
     </curso>
     <curso>
       <nome>Engenharia de Energia</nome>
       <arquivo>Energia.xml</arquivo>
-      <N_obg>185</N_obg>
-      <N_lim>85</N_lim>
-      <N_livre>30</N_livre>
     </curso>
     <curso>
       <nome>Engenharia de Gestão</nome>
       <arquivo>Gestão.xml</arquivo>
-      <N_obg>202</N_obg>
-      <N_lim>68</N_lim>
-      <N_livre>30</N_livre>
-    </curso>
-    <curso>
-      <nome>Engenharia de Informação</nome>
-      <arquivo>Informação.xml</arquivo>
-      <N_obg>197</N_obg>
-      <N_lim>73</N_lim>
-      <N_livre>30</N_livre>
     </curso>
     <curso>
       <nome>Engenharia de Instrumentação, Automação e Robótica</nome>
       <arquivo>IAR.xml</arquivo>
-      <N_obg>201</N_obg>
-      <N_lim>69</N_lim>
-      <N_livre>30</N_livre>
+    </curso>
+    <curso>
+      <nome>Engenharia de Informação</nome>
+      <arquivo>Informação.xml</arquivo>
     </curso>
     <curso>
       <nome>Engenharia de Materiais</nome>
       <arquivo>Materiais.xml</arquivo>
-      <N_obg>180</N_obg>
-      <N_lim>90</N_lim>
-      <N_livre>30</N_livre>
     </curso>
-  </tipo>
-  <tipo nome="Bacharelados">
+  </cursos>
+  <cursos tipo="Bacharelados">
     <curso>
       <nome>Bacharelado em Ciências Biológicas</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
     </curso>
     <curso>
       <nome>Bacharelado em Ciência da Computação</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
     </curso>
     <curso>
       <nome>Bacharelado em Física</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
     </curso>
     <curso>
       <nome>Bacharelado em Matemática</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
     </curso>
     <curso>
       <nome>Bacharelado em Química</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
     </curso>
     <curso>
       <nome>Bacharelado em Neurociência</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
     </curso>
     <curso>
       <nome>Bacharelado em Filosofia</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
     </curso>
     <curso>
       <nome>Bacharelado em Ciências Econômicas</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
     </curso>
     <curso>
       <nome>Bacharelado em Planejamento Territorial</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
     </curso>
     <curso>
       <nome>Bacharelado em Políticas Públicas</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
     </curso>
     <curso>
       <nome>Bacharelado em Relações Internacionais</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
     </curso>
-  </tipo>
-  <tipo nome="Licenciaturas">
+  </cursos>
+  <cursos tipo="Licenciaturas">
     <curso>
       <nome>Licenciatura em Ciências Biológicas</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
     </curso>
     <curso>
       <nome>Licenciatura em Física</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
     </curso>
     <curso>
       <nome>Licenciatura em Matemática</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
     </curso>
     <curso>
       <nome>Licenciatura em Química</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
     </curso>
     <curso>
       <nome>Licenciatura em Filosofia</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
     </curso>
-  </tipo>
+  </cursos>
 </graduacao>

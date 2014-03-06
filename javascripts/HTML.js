@@ -1,55 +1,77 @@
-function carregarPortalDoAluno(aluno)
+function carregarPortalDoAluno(atualizar)
 {
-    fillData(aluno);
-    changeRowColor(aluno.nome);
-    setStaticState();
-    stopIntervalMessages();
+    if (atualizar)
+        clearData();
+    else
+    {
+        changeRowColor(aluno.nome);
+        setStaticState();
+    }
+    fillData(atualizar);
 }
 
-function fillData(aluno)
+function fillData(atualizar)
 {
     document.getElementById('nome').innerHTML  = aluno.nome;
     //document.getElementById('email').innerHTML = aluno.email;
     document.getElementById('RA').innerHTML    = aluno.RA;
-    document.getElementById('curso').value = aluno.curso;  //.innerHTML = aluno.curso;
-    d_acc = 0;
-    ficha_individual = document.getElementsByClassName('ficha_individual')[0];
-    for (q = 0; q < aluno.quadrimestre.length; q++)
+    if (!atualizar)
+        document.getElementById('curso').value = aluno.curso;  //.innerHTML = aluno.curso;
+    var d_acc = 0;
+    var ficha_individual = document.getElementsByClassName('ficha_individual')[0];
+    for (var q = 0; q < aluno.quadrimestre.length; q++)
     {
-        qn = insertElement('tr',
-                           'quadrimestre ' + q,
-                           null,
-                           'quadrimestre',
-                           '<td colspan=6 class="ano_periodo">' + aluno.quadrimestre[q].n + ' de ' + aluno.quadrimestre[q].ano + '</td>',
-                           null,
-                           ficha_individual,
-                           null,
-                           'cabecalho');
-        for (d = 0; d < aluno.quadrimestre[q].disciplina.length; d++)
-        {
-            innerHTML = '<td>' + aluno.quadrimestre[q].disciplina[d].codigo    + '</td>' + '\n' +
-                        '<td style="text-align: left;">' + aluno.quadrimestre[q].disciplina[d].nome + '</td>' + '\n' +
-                        '<td>' + aluno.quadrimestre[q].disciplina[d].creditos  + '</td>' + '\n' +
-                        '<td>' + aluno.quadrimestre[q].disciplina[d].conceito  + '</td>' + '\n' +
-                        '<td>' + aluno.quadrimestre[q].disciplina[d].situacao  + '</td>' + '\n' +
-                        '<td>' + aluno.quadrimestre[q].disciplina[d].categoria + '</td>';
-
-            dn = insertElement('tr',
-                               'disciplina ' + d_acc++,
+        var qn = insertElement('tr',
+                               'quadrimestre ' + q,
                                null,
-                               'disciplina',
-                               innerHTML,
+                               'quadrimestre',
+                               '<td colspan=6 class="ano_periodo">' + aluno.quadrimestre[q].n + ' de ' + aluno.quadrimestre[q].ano + '</td>',
                                null,
                                ficha_individual,
                                null,
-                               qn);
+                               'cabecalho');
+        for (var d = 0; d < aluno.quadrimestre[q].disciplinas.length; d++)
+        {
+            var innerHTML = '<td>'                           + aluno.quadrimestre[q].disciplinas[d].codigo    + '</td>' + '\n' +
+                            '<td style="text-align: left;">' + aluno.quadrimestre[q].disciplinas[d].nome      + '</td>' + '\n' +
+                            '<td>'                           + aluno.quadrimestre[q].disciplinas[d].creditos  + '</td>' + '\n' +
+                            '<td>'                           + aluno.quadrimestre[q].disciplinas[d].conceito  + '</td>' + '\n' +
+            //                '<td>'                           + aluno.quadrimestre[q].disciplinas[d].peso      + '</td>' + '\n' +
+                            '<td>'                           + aluno.quadrimestre[q].disciplinas[d].situacao  + '</td>' + '\n' +
+                            '<td>'                           + aluno.quadrimestre[q].disciplinas[d].categoria + '</td>';
+
+            insertElement('tr',
+                          'disciplina ' + d_acc++,
+                          null,
+                          'disciplina',
+                          innerHTML,
+                          null,
+                          ficha_individual,
+                          null,
+                          qn);
         }
     }
+    document.getElementById('CP').innerHTML = aluno.CP;
+    document.getElementById('CR').innerHTML = aluno.CR;
+    document.getElementById('CA').innerHTML = aluno.CA;
+}
+
+function clearData()
+{
+    removeElementsByClass('quadrimestre');
+    removeElementsByClass('disciplina');
 }
 
 function setDynamicState()
 {
-    fade = document.getElementById('fade');
+    var cursosSelection = document.getElementById('curso');
+    var blankOpt  = document.createElement('option');
+    blankOpt.text = '';
+    cursosSelection.add(blankOpt, 0);
+    cursosSelection.selectedIndex = 0;
+    cursosSelection.disabled = true;
+
+    var fade     = document.getElementById('fade');
     fade.onclick = openPortal;
     window.setTimeout(function()
     {
@@ -59,7 +81,12 @@ function setDynamicState()
 
 function setStaticState()
 {
-    fade = document.getElementById('fade');
+    var cursosSelection = document.getElementById('curso');
+    if (cursosSelection.options[0].text == '')
+        cursosSelection.remove(0);
+    cursosSelection.disabled = false;
+
+    var fade       = document.getElementById('fade');
     fade.onclick   = null;
     fade.className = 'static';
 }
@@ -67,12 +94,12 @@ function setStaticState()
 function changeRowColor(str)
 {
 
-    bgColor = intToRGB(hashCode(str));
+    var bgColor = intToRGB(hashCode(str));
     insertCSS('#conteudo tr:hover td { background: #' + bgColor + '; }');
 
-    cp      = document.getElementsByClassName('coeficientes')[0].childNodes[1].childNodes[2].childNodes[1];
-    cpColor = document.defaultView.getComputedStyle(cp, null)['color'];
-    cpColor = rgbToString(cpColor);
+    var cp      = document.getElementsByClassName('coeficientes')[0].childNodes[1].childNodes[2].childNodes[1];
+    var cpColor = document.defaultView.getComputedStyle(cp, null)['color'];
+        cpColor = rgbToString(cpColor);
     //if (getBrightness(0, bgColor) <= 255*.7)
     //    bgColor = rgbBrightness(bgColor, .50);
     if (getBrightness(0, bgColor) <= 255*.7 ||
@@ -83,12 +110,17 @@ function changeRowColor(str)
 
 function updateForms()
 {
-    cursosLista = document.getElementById('curso');
-    for (c = 0; c < cursos.length; c++)
+    var cursosSelection = document.getElementById('curso');
+    for (var t = 0; t < cursos.tipos.length; t++)
     {
-        curso = cursos[c];
-        cursoOpt      = document.createElement('option');
-        cursoOpt.text = curso.nome;
-        cursosLista.add(cursoOpt);
+      var cursoGrp   = document.createElement('optgroup');
+      cursoGrp.label = cursos.tipos[t].nome;
+      for (var c = 0; c < cursos.tipos[t].length; c++)
+      {
+          var cursoOpt  = document.createElement('option');
+          cursoOpt.text = cursos.tipos[t][c].nome;
+          cursoGrp.appendChild(cursoOpt);
+      }
+      cursosSelection.add(cursoGrp);
     }
 }

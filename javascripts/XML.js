@@ -1,16 +1,27 @@
 function xmlClass(str)
 {
-    var doc;
+    var data;
     this.loadXML = function(str)
     {
-        this.doc = parseXML(str);
+        this.data = parseXML(str);
         console.log('XML obtido com sucesso.');
+    }
+    this.getElements = function(tag)
+    {
+        try
+        {
+            return this.data.getElementsByTagName(tag);
+        }
+        catch(e)
+        {
+            return null;
+        }
     }
     this.getFirstElement = function(tag)
     {
         try
         {
-            return this.doc.getElementsByTagName(tag)[0].childNodes[0];
+            return this.getElements(tag)[0].childNodes[0];
         }
         catch(e)
         {
@@ -22,17 +33,6 @@ function xmlClass(str)
         try
         {
             return this.getFirstElement(tag).nodeValue;
-        }
-        catch(e)
-        {
-            return null;
-        }
-    }
-    this.getElements = function(tag)
-    {
-        try
-        {
-            return this.doc.getElementsByTagName(tag);
         }
         catch(e)
         {

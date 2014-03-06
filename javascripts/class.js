@@ -7,7 +7,8 @@ function alunoClass(xmlDOC)
         quadrimestre,
         coeficientes,
         situacao,
-        tipoDeDisciplina;
+        tipoDeDisciplina,
+        CP, CR, CA;
     this.loadFromXML = function(xmlDOC)
     {
         this.nome  = xmlDOC.getFirstElementValue('nome');   if (this.nome  === null) this.nome  = '';
@@ -15,144 +16,249 @@ function alunoClass(xmlDOC)
         this.RA    = xmlDOC.getFirstElementValue('ra');     if (this.RA    === null) this.RA    = '';
         this.curso = xmlDOC.getFirstElementValue('curso');  if (this.curso === null) this.curso = '';
         this.quadrimestre = [];
-        qr = xmlDOC.getElements('quadrimestre');
-        for (q = 0; q < qr.length; q++)
+        var qr = xmlDOC.getElements('quadrimestre');
+        for (var q = 0; q < qr.length; q++)
             this.quadrimestre.push(new quadrimestreClass(qr[q]));
-        this.analisarCurso(this.curso);
+        this.analisar(false);
     }
-    this.analisarCurso = function(curso)
+    this.analisar = function(atualizar)
     {
-        //cursoID = this.obterCursoID(curso);
-        var cursoID;
-        switch(cursoID)
-        {
-            case  0:
-            case  1:
-                break;
-            case  2:
-                break;
-            case  3:
-                break;
-            case  4:
-                break;
-            case  5:
-                break;
-            case  6:
-                break;
-            case  7:
-                break;
-            case  8:
-                break;
-            case  9:
-                break;
-            case 10:
-                break;
-            case 11:
-                break;
-            case 12:
-                break;
-            case 13:
-                break;
-            case 14:
-                break;
-            case 15:
-                break;
-            case 16:
-                break;
-            case 17:
-                break;
-            case 18:
-                break;
-            case 19:
-                break;
-            case 20:
-                break;
-            case 21:
-                break;
-            case 22:
-                break;
-            case 23:
-                break;
-            case 24:
-                break;
-            default: break;
-        }
+        this.calcularCR();
+        this.calcularCA();
+        this.analisarCurso(this.curso, atualizar);
+    }
+    this.analisarCurso = function(cursoStr, atualizar)
+    {
+        var curso = cursos.getCursoByName(cursoStr);
+        if (atualizar) this.atualizarCategorias(curso);
+        this.calcularCP(curso);
+    }
+    this.atualizarCategorias = function(curso)
+    {
+        for (var q = 0; q < this.quadrimestre.length; q++)
+            for (var d = 0; d < this.quadrimestre[q].disciplinas.length; d++)
+            {
+                var disc1 = this.quadrimestre[q].disciplinas[d];
+                var disc2 = curso.getDisciplinaByCod(disc1.codigo);
+                if (disc2 !== null && disc2 !== undefined &&
+                    disc1.categoria != disc2.categoria &&
+                    disc1.situacao  == 'Aprovado' &&
+                    disc1.conceitoN != -1 && disc1.calculoCA)
+                {
+                    disc1.categoria = disc2.categoria;
+                }
+            }
+    }
+    this.calcularCP = function(curso)
+    {
+        var n_obr   = 0,
+            n_lim   = 0,
+            n_livre = 0,
+            NC;
+        for (var q = 0; q < this.quadrimestre.length; q++)
+            for (var d = 0; d < this.quadrimestre[q].disciplinas.length; d++)
+            {
+                var disc = this.quadrimestre[q].disciplinas[d];
+                if (disc.situacao  == 'Aprovado' &&
+                    disc.conceitoN != -1 && disc.calculoCA)
+                {
+                    switch (disc.categoria)
+                    {
+                        case 'Obrigatória'   : n_obr   += disc.creditos; break;
+                        case 'Opção Limitada': n_lim   += disc.creditos; break;
+                        case 'Livre Escolha' : n_livre += disc.creditos; break;
+                        default: break;
+                    }
+                }
+            }
+        NC = curso.N_obr + curso.N_lim + curso.N_livre;
+        this.CP = ((n_obr + Math.min((curso.N_lim + curso.N_livre), n_lim + Math.min(n_livre, curso.N_livre))) / NC).toFixed(3).replace('.', ',');
+    }
+    this.calcularCR = function()
+    {
+        var num = 0,
+            den = 0;
+        for (var q = 0; q < this.quadrimestre.length; q++)
+            for (var d = 0; d < this.quadrimestre[q].disciplinas.length; d++)
+            {
+                var disc = this.quadrimestre[q].disciplinas[d];
+                if (disc.situacao  == 'Aprovado' &&
+                    disc.conceitoN != -1)
+                {
+                    num += disc.peso;
+                    den += disc.creditos;
+                }
+            }
+        this.CR = (num / den).toFixed(3).replace('.', ',');
+    }
+    this.calcularCA = function()
+    {
+        var num = 0,
+            den = 0;
+        for (var q = 0; q < this.quadrimestre.length; q++)
+            for (var d = 0; d < this.quadrimestre[q].disciplinas.length; d++)
+            {
+                var disc = this.quadrimestre[q].disciplinas[d];
+                if (disc.situacao  == 'Aprovado' &&
+                    disc.conceitoN != -1 &&
+                    disc.calculoCA)
+                {
+                    num += disc.peso;
+                    den += disc.creditos;
+                }
+            }
+        this.CA = (num / den).toFixed(3).replace('.', ',');
     }
     this.loadFromXML(xmlDOC);
 }
 
-function disciplinaClass(xml)
+function disciplinaClass(parseType, xml)
 {
     var codigo,
         nome,
         creditos,
         conceito,
+        conceitoN,
+        peso,
         situacao,
-        categoria;
-    this.parse = function(xml)
+        categoria,
+        calculoCA;
+    this.parseByAluno = function(xml)
     {
-        this.codigo    = xml.getAttribute('codigo');
-        this.nome      = xml.getElementsByTagName('nome'     )[0].childNodes[0].nodeValue;
-        this.creditos  = xml.getElementsByTagName('creditos' )[0].childNodes[0].nodeValue;
-        this.conceito  = xml.getElementsByTagName('conceito' )[0].childNodes[0].nodeValue;
-        this.situacao  = xml.getElementsByTagName('situacao' )[0].childNodes[0].nodeValue;
-        this.categoria = xml.getElementsByTagName('categoria')[0].childNodes[0].nodeValue;
+        this.codigo    =          xml.getAttribute('codigo');
+        this.nome      =          xml.getElementsByTagName('nome'     )[0].childNodes[0].nodeValue;
+        this.creditos  = parseInt(xml.getElementsByTagName('creditos' )[0].childNodes[0].nodeValue);
+        this.conceito  =          xml.getElementsByTagName('conceito' )[0].childNodes[0].nodeValue;
+        this.situacao  =          xml.getElementsByTagName('situacao' )[0].childNodes[0].nodeValue;
+        this.categoria =          xml.getElementsByTagName('categoria')[0].childNodes[0].nodeValue;
+        this.conceitoN = this.converterConceito(this.conceito);
+        this.peso      = this.creditos * this.conceitoN;
+        this.calculoCA = true;
     }
-    this.parse(xml);
+    this.parseByCurso = function(xml)
+    {
+        this.codigo    =          xml.getElementsByTagName('CODIGO'    )[0].innerHTML;
+        this.nome      =          xml.getElementsByTagName('DISCIPLINA')[0].innerHTML;
+        this.creditos  = parseInt(xml.getElementsByTagName('CREDITOS'  )[0].innerHTML);
+        this.categoria =          xml.getElementsByTagName('CATEGORIA' )[0].innerHTML;
+    }
+    this.converterConceito = function(c)
+    {
+        switch (c)
+        {
+            case 'A': return  4;
+            case 'B': return  3;
+            case 'C': return  2;
+            case 'D': return  1;
+            case 'F': return  0;
+            case 'O': return  0;
+            case 'I': return -1;
+            default : return -1;
+        }
+    }
+    switch (parseType)
+    {
+        case 0:  this.parseByAluno(xml); break;
+        case 1:  this.parseByCurso(xml); break;
+        default: break;
+    }
 }
 
 function quadrimestreClass(xml)
 {
-    var ano,
-        n,
-        disciplina;
+    var n, ano, disciplinas;
     this.parse = function(xml)
     {
         this.ano = xml.getAttribute('ano');
         this.n   = xml.getAttribute('num');
-        this.disciplina = [];
-        dr = xml.getElementsByTagName('disciplina');
-        for (d = 0; d < dr.length; d++)
-            this.disciplina.push(new disciplinaClass(dr[d]));
+        this.disciplinas = [];
+        var dr = xml.getElementsByTagName('disciplina');
+        for (var d = 0; d < dr.length; d++)
+        {
+            nova_disciplina = new disciplinaClass(0, dr[d]);
+            for (var i = 0; i < this.disciplinas.length; i++)
+                if (nova_disciplina.codigo == this.disciplinas[i].codigo)
+                {
+                    if (this.disciplinas[i].conceitoN < nova_disciplina.conceitoN)
+                        this.disciplinas[i].calculoCA = false;
+                    else    nova_disciplina.calculoCA = false;
+                }
+            this.disciplinas.push(nova_disciplina);
+        }
     }
     this.parse(xml);
 }
 
-function cursoClass(xmlDOC)
+function cursoClass(xml)
 {
-    var id, nome;
+    var nome, arquivo, disciplinas,
+        N_obr,
+        N_lim,
+        N_livre;
+    this.parse = function(xml)
+    {
+        this.nome        =          xml.getElementsByTagName('nome'   )[0].innerHTML;
+        this.arquivo     =          xml.getElementsByTagName('arquivo')[0].innerHTML;
+        this.N_obr       = parseInt(xml.getElementsByTagName('N_obg'  )[0].innerHTML);
+        this.N_lim       = parseInt(xml.getElementsByTagName('N_lim'  )[0].innerHTML);
+        this.N_livre     = parseInt(xml.getElementsByTagName('N_livre')[0].innerHTML);
+        this.disciplinas = [];
+        if (this.arquivo !== null && this.arquivo !== undefined && this.arquivo != '')
+        {
+            var xmlCurso = importXML(xmlPath + '/' + this.arquivo);
+            var dr = xmlCurso.getElementsByTagName('row');
+            for (var d = 0; d < dr.length; d++)
+            {
+                var disciplina = new disciplinaClass(1, dr[d])
+                this.disciplinas.push(disciplina);
+                //if (disciplina.categoria == 'Obrigatória')
+                //    this.N_obr += disciplina.creditos;
+            }
+        }
+    }
+    this.getDisciplinaByCod = function(codigo)
+    {
+        for (var d = 0; d < this.disciplinas.length; d++)
+        {
+            var disciplina = this.disciplinas[d];
+            if (codigo == disciplina.codigo)
+                return disciplina;
+        }
+        return null;
+    }
+    this.parse(xml);
+}
+
+function cursosClass(xmlDOC)
+{
+    var tipos;
     this.loadFromXML = function(xmlDOC)
     {
-        
+        this.tipos = [];
+        var graduacao = xmlDOC.getElementsByTagName('tipo');
+        for (var t = 0; t < graduacao.length; t++)
+        {
+            var tipo   = graduacao[t].getElementsByTagName('curso');
+            var lista  = [];
+            lista.nome = tipo[0].parentNode.getAttribute('nome');
+            for (var c = 0; c < tipo.length; c++)
+            {
+                var curso = new cursoClass(tipo[c]);
+                lista.push(curso);
+            }
+            this.tipos.push(lista);
+        }
     }
-    this.obterCursoID = function(curso)
+    this.getCursoByName = function(cursoStr)
     {
-        //if (curso === null || curso === undefined) return -1;
-             if (curso == 'Bacharelado em Ciência e Tecnologia') return  0;
-        else if (curso == 'Bacharelado em Ciências e Humanidades') return  1;
-        else if (curso == 'Engenharia Aeroespacial') return  2;
-        else if (curso == 'Engenharia Ambiental e Urbana') return  3;
-        else if (curso == 'Engenharia Biomédica') return  4;
-        else if (curso == 'Engenharia de Energia') return  5;
-        else if (curso == 'Engenharia de Gestão') return  6;
-        else if (curso == 'Engenharia de Instrumentação, Automação e Robótica') return  7;
-        else if (curso == 'Engenharia de Informação') return  8;
-        else if (curso == 'Engenharia de Materiais') return  9;
-        else if (curso == 'Bacharelado em Ciências Biológicas') return 10;
-        else if (curso == 'Bacharelado em Ciência da Computação') return 11;
-        else if (curso == 'Bacharelado em Física') return 12;
-        else if (curso == 'Bacharelado em Matemática') return 13;
-        else if (curso == 'Bacharelado em Química') return 14;
-        else if (curso == 'Bacharelado em Neurociência') return 15;
-        else if (curso == 'Bacharelado em Filosofia') return 16;
-        else if (curso == 'Bacharelado em Ciências Econômicas') return 17;
-        else if (curso == 'Bacharelado em Planejamento Territorial') return 18;
-        else if (curso == 'Bacharelado em Políticas Públicas') return 19;
-        else if (curso == 'Bacharelado em Relações Internacionais') return 20;
-        else if (curso == '') return 21;
-        else if (curso == '') return 22;
-        else if (curso == '') return 23;
-        else return -1;
+        for (var t = 0; t < this.tipos.length; t++)
+            for (var c = 0; c < this.tipos[t].length; c++)
+            {
+                var curso = this.tipos[t][c];
+                if (cursoStr == curso.nome)
+                    return curso;
+            }
+        return null;
     }
     this.loadFromXML(xmlDOC);
 }

@@ -1,18 +1,21 @@
 loadScript('javascripts/XML.js',    null);
 loadScript('javascripts/class.js',  null);
 
-var actualDataHash, cursos;
+var actualDataHash, aluno, cursos,
+    xmlPath    = 'xml',
+    cursosFile = 'cursos.xml';
 
 function loadFromData(data)
 {
     aluno = new alunoClass(data);
-    carregarPortalDoAluno(aluno);
+    stopIntervalMessages();
+    carregarPortalDoAluno(false);
 }
 
 function loadFromRaw(raw)
 {
-    dataHash = getHashFromRaw(raw);
-    XML      = new xmlClass(dataHash);
+    var dataHash = getHashFromRaw(raw);
+    var XML      = new xmlClass(dataHash);
     if (actualDataHash != dataHash)
     {
         actualDataHash = dataHash;
@@ -24,17 +27,17 @@ function loadFromRaw(raw)
 
 function getHashFromRaw(data)
 {
-    uri     = new URI('?' + data);
-    uncoded = uri.search(true).aluno;
-    uncoded = (uncoded !== null && uncoded !== undefined) ? decodeURIComponent(uncoded) : data;
+    var uri     = new URI('?' + data);
+    var uncoded = uri.search(true).aluno;
+        uncoded = (uncoded !== null && uncoded !== undefined) ? decodeURIComponent(uncoded) : data;
     console.log('Hashcode obtido com sucesso:');
-    console.log(uncoded);
+    //console.log(uncoded);
     return atob(uncoded);
 }
 
 function atualizarCursos()
 {
-    XML    = importXML('xml/cursos.xml');
-    cursos = new cursoClass(XML);
+    var XML = importXML(xmlPath + '/' + cursosFile);
+    cursos  = new cursosClass(XML);
     updateForms();
 }
