@@ -75,6 +75,14 @@ function xmlClass(str)
 
 function importXML(xmlFile)
 {
+    var xhttp;
+    if (window.XMLHttpRequest)
+         xhttp = new XMLHttpRequest();
+    else xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    xhttp.open("GET", xmlFile, false);
+    xhttp.send();
+    return xhttp.responseXML;
+
     var xmlDOC, xmlLoaded;
     try
     {
