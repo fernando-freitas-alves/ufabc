@@ -111,7 +111,6 @@ function changeRowColor(str)
 function updateForms()
 {
     var cursosSelection = document.getElementById('curso');
-    cursosSelection.disabled = false;
     for (var t = 0; t < cursos.tipos.length; t++)
     {
       var cursoGrp   = document.createElement('optgroup');
@@ -122,8 +121,6 @@ function updateForms()
           cursoOpt.text = cursos.tipos[t][c].nome;
           cursoGrp.appendChild(cursoOpt);
       }
-      cursosSelection.add(cursoGrp);
-      cursosSelection.disabled = false;
+      cursosSelection.add(cursoGrp, null);
     }
-    cursosSelection.disabled = true;
 }
