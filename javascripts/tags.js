@@ -57,12 +57,20 @@ function replaceElement(innerHTML, target)
 
 function removeElementsByClass(className)
 {
-    var elements = document.getElementsByClassName(className);
+    var element,
+        elements = document.getElementsByClassName(className);
     for (var e = elements.length - 1; e >= 0; e--)
     {
         element = elements[e];
         element.parentNode.removeChild(element);
     }
+}
+
+function removeAllChildsNodes(target)
+{
+    var elementTarget = getElement(target);
+    for (var c = elementTarget.childNodes.length - 1; c >= 0; c--)
+        elementTarget.removeChild(elementTarget.childNodes[c]);
 }
 
 function insertCSS(css)
