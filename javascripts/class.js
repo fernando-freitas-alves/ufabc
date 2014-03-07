@@ -8,7 +8,8 @@ function alunoClass(xmlDOC)
         coeficientes,
         situacao,
         tipoDeDisciplina,
-        CP, CR, CA;
+        CP, CR, CA,
+        I,  T;
     this.loadFromXML = function(xmlDOC)
     {
         this.nome  = xmlDOC.getFirstElementValue('nome');   if (this.nome  === null) this.nome  = '';
@@ -19,18 +20,20 @@ function alunoClass(xmlDOC)
         var qr = xmlDOC.getElements('quadrimestre');
         for (var q = 0; q < qr.length; q++)
             this.quadrimestre.push(new quadrimestreClass(qr[q]));
+        this.T = this.quadrimestre.length;
         this.analisar(false);
     }
-    this.analisar = function(atualizar)
+    this.analisar = function(atualizarDisc)
     {
+        this.analisarCurso(this.curso, atualizarDisc);
         this.calcularCR();
         this.calcularCA();
-        this.analisarCurso(this.curso, atualizar);
+        this.calcularI();
     }
-    this.analisarCurso = function(cursoStr, atualizar)
+    this.analisarCurso = function(cursoStr, atualizarDisc)
     {
         var curso = cursos.getCursoByName(cursoStr);
-        if (atualizar) this.atualizarCategorias(curso);
+        if (atualizarDisc) this.atualizarCategorias(curso);
         this.calcularCP(curso);
     }
     this.atualizarCategorias = function(curso)
@@ -108,6 +111,10 @@ function alunoClass(xmlDOC)
                 }
             }
         this.CA = (num / den).toFixed(3).replace('.', ',');
+    }
+    this.calcularI = function()
+    {
+        this.I = (0.07 * this.CR + 0.63 * this.CP + 0.005 * this.T).toFixed(3).replace('.', ',');
     }
     this.loadFromXML(xmlDOC);
 }

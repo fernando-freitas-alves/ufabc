@@ -54,6 +54,7 @@ function fillData(atualizar)
     document.getElementById('CP').innerHTML = aluno.CP;
     document.getElementById('CR').innerHTML = aluno.CR;
     document.getElementById('CA').innerHTML = aluno.CA;
+    document.getElementById('I' ).innerHTML = aluno.I;
 }
 
 function clearData()
@@ -121,6 +122,7 @@ function updateForms()
           cursoOpt.text = cursos.tipos[t][c].nome;
           cursoGrp.appendChild(cursoOpt);
       }
-      cursosSelection.add(cursoGrp, null);
+      try      { cursosSelection.add(cursoGrp, 0); }
+      catch(e) { cursosSelection.add(cursoGrp); }
     }
 }
