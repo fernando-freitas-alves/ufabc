@@ -119,8 +119,8 @@ function updateForms()
 {
     var    cursosSelection     = document.getElementById('curso');
     var newCursosSelection     = document.createElement('select');
-    for (var a = 0; a < newCursosSelection.attributes.length; a++)
-        newCursosSelection.setAttributeNode(newCursosSelection.attributes.item(a));
+    for (var a = 0; a < cursosSelection.attributes.length; a++)
+        newCursosSelection.setAttributeNode(cursosSelection.attributes.item(a));
     removeAllChildsNodes(cursosSelection);
     for (var t = 0; t < cursos.tipos.length; t++)
     {
