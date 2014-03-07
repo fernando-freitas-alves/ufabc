@@ -66,10 +66,11 @@ function clearData()
 function setDynamicState()
 {
     var cursosSelection = document.getElementById('curso');
-    var blankOpt  = document.createElement('option');
-    blankOpt.text = '';
-    cursosSelection.add(blankOpt, 0);
-    cursosSelection.selectedIndex = 0;
+    //var blankOpt  = document.createElement('option');
+    //blankOpt.text = '';
+    //cursosSelection.add(blankOpt, 0);
+    //cursosSelection.selectedIndex = 0;
+    cursosSelection.selectedIndex = -1;
     cursosSelection.disabled = true;
 
     var fade     = document.getElementById('fade');
@@ -83,8 +84,8 @@ function setDynamicState()
 function setStaticState()
 {
     var cursosSelection = document.getElementById('curso');
-    if (cursosSelection.options[0].text == '')
-        cursosSelection.remove(0);
+    //if (cursosSelection.options[0].text == '')
+    //    cursosSelection.remove(0);
     cursosSelection.disabled = false;
 
     var fade       = document.getElementById('fade');
