@@ -25,9 +25,9 @@ function alunoClass(xmlDOC)
     }
     this.analisar = function(atualizarDisc)
     {
-        this.analisarCurso(this.curso, atualizarDisc);
         this.calcularCR();
         this.calcularCA();
+        this.analisarCurso(this.curso, atualizarDisc);
     }
     this.analisarCurso = function(cursoStr, atualizarDisc)
     {

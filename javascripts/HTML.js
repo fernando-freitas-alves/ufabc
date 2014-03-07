@@ -129,9 +129,11 @@ function updateForms()
           cursoOpt.text = cursos.tipos[t][c].nome;
           cursoGrp.appendChild(cursoOpt);
       }
-      try      { cursosSelection.add(cursoGrp, 0); }
-      catch(e) { cursosSelection.add(cursoGrp);    }
+      //try       { cursosSelection.add(cursoGrp, 0); }
+      //catch (e) { cursosSelection.add(cursoGrp);    }
+      try       { cursosSelection.innerHTML = cursoGrp.outerHTML; }
+      catch (e) { cursosSelection.innerHTML = cursoGrp.outerText; }
     }
-    try      { replaceElement(cursosSelection.outerHTML, 'curso'); }
-    catch(e) { replaceElement(cursosSelection.outerText, 'curso'); }
+    try       { replaceElement(cursosSelection.outerHTML, 'curso'); }
+    catch (e) { replaceElement(cursosSelection.outerText, 'curso'); }
 }
