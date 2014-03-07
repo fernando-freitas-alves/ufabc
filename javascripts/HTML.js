@@ -137,7 +137,7 @@ function updateForms()
     }
     if (!cursosSelection.hasChildNodes())
     {
-      try       { replaceElement(cursosSelection.outerHTML, 'curso'); }
-      catch (e) { replaceElement(cursosSelection.outerText, 'curso'); }
+      try       { replaceElement(newCursosSelection.outerHTML, cursosSelection); }
+      catch (e) { replaceElement(newCursosSelection.outerText, cursosSelection); }
     }
 }
