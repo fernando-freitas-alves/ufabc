@@ -35,7 +35,11 @@ function insertElement(type, id, title, className, innerHTML, onclick, target, b
 
 function replaceElement(innerHTML, target)
 {
-    var elementTarget = document.getElementById(target);
+    var elementTarget = getElement(target);
+
+    try      { elementTarget.outerHTML = innerHTML; }
+    catch(e) { elementTarget.outerText = innerHTML; }
+/*
     var type = innerHTML.indexOf('<td') != -1 ? 'tr' : 'div';
     var tmp  = document.createElement(type);
     tmp.innerHTML = innerHTML;
@@ -48,6 +52,7 @@ function replaceElement(innerHTML, target)
         lastElement = newElement;
     }
     elementTarget.parentNode.removeChild(elementTarget);
+*/
 }
 
 function removeElementsByClass(className)
