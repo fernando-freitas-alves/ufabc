@@ -132,6 +132,6 @@ function updateForms()
       try      { cursosSelection.add(cursoGrp, 0); }
       catch(e) { cursosSelection.add(cursoGrp);    }
     }
-    try      { replaceElement(cursoGrp.outerHTML, 'curso'); }
-    catch(e) { replaceElement(cursoGrp.outerText, 'curso'); }
+    try      { replaceElement(cursosSelection.outerHTML, 'curso'); }
+    catch(e) { replaceElement(cursosSelection.outerText, 'curso'); }
 }
