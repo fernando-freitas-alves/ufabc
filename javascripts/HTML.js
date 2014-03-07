@@ -111,7 +111,7 @@ function changeRowColor(str)
 
 function formatNumber(numberToStr, decimalPrec)
 {
-    return n.toFixed(decimalPrec).replace('.', ',');
+    return numberToStr.toFixed(decimalPrec).replace('.', ',');
 }
 
 function updateForms()
