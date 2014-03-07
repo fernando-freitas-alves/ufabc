@@ -18,8 +18,9 @@ onload = function()
     console.log('[PÁGINA INICIADA COM SUCESSO]');
 }
 
-document.getElementById('curso').onchange = function()
+//document.getElementById('curso').onchange = function()
 //$('#curso').on('change', function()
+function cursoOnChange()
 {
     var curso = this.value;
     aluno.analisarCurso(curso, true);

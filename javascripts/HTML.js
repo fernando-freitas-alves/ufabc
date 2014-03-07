@@ -136,9 +136,11 @@ function updateForms()
         try       { newCursosSelection.innerHTML += cursoGrp.outerHTML; }
         catch (e) { newCursosSelection.innerHTML += cursoGrp.outerText; }
     }
-    if (cursosSelection.hasChildNodes())
+    if (!cursosSelection.hasChildNodes())
         try       { replaceElement(newCursosSelection.outerHTML, cursosSelection); }
         catch (e) { replaceElement(newCursosSelection.outerText, cursosSelection); }
+
+    cursosSelection.onchange = cursoOnChange;
 }
 /*
 {
