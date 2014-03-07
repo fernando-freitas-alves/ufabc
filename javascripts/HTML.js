@@ -120,7 +120,11 @@ function updateForms()
     var    cursosSelection     = document.getElementById('curso');
     var newCursosSelection     = document.createElement('select');
     for (var a = 0; a < cursosSelection.attributes.length; a++)
-        newCursosSelection.setAttributeNode(cursosSelection.attributes.item(a));
+    {
+        //newCursosSelection.setAttributeNode(cursosSelection.attributes.item(a));
+        var attr = cursosSelection.attributes.item(a);
+        newCursosSelection.setAttribute(attr.nodeName, attr.nodeValue);
+    }
     removeAllChildsNodes(cursosSelection);
     for (var t = 0; t < cursos.tipos.length; t++)
     {
