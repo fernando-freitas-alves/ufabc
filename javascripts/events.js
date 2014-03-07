@@ -19,11 +19,13 @@ onload = function()
 }
 
 document.getElementById('curso').onchange = function()
+//$('#curso').on('change', function()
 {
     var curso = this.value;
     aluno.analisarCurso(curso, true);
     carregarPortalDoAluno(true);
 }
+//});
 
 //*********************** MESSAGES ***********************
 

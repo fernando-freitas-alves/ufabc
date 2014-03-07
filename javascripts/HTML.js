@@ -117,26 +117,15 @@ function formatNumber(numberToStr, decimalPrec)
 
 function updateForms()
 {
-    var    cursosSelection     = document.getElementById('curso');
-    //var newCursosSelection     = document.createElement('select');
-    var newCursosSelection     = $("#curso").clone(true);
-    /*
-    for (var a = 0; a < cursosSelection.attributes.length; a++)
-    {
-        //newCursosSelection.setAttributeNode(cursosSelection.attributes.item(a));
-        var attr = cursosSelection.attributes.item(a);
-        alert('[' + (a+1) + '/' + cursosSelection.attributes.length + '] ' + attr.nodeName + ': ' + attr.nodeValue);
-        newCursosSelection.setAttribute(attr.nodeName, attr.nodeValue);
-        alert('copied');  
-    }
-    */
+    var    cursosSelection = document.getElementById('curso');
+    var newCursosSelection = cursosSelection.cloneNode();
     removeAllChildsNodes(cursosSelection);
     newCursosSelection.innerHTML = '';
     for (var t = 0; t < cursos.tipos.length; t++)
     {
         var cursoGrp       = document.createElement('optgroup');
             cursoGrp.label = cursos.tipos[t].nome;
-        for (var c = 0; c < cursos.tipos[t].length; c++)
+        for (var c = 0;  c < cursos.tipos[t].length; c++)
         {
             var cursoOpt      = document.createElement('option');
                 cursoOpt.text = cursos.tipos[t][c].nome;
@@ -144,23 +133,35 @@ function updateForms()
         }
         try       {    cursosSelection.add(cursoGrp, null); }
         catch (e) {    cursosSelection.add(cursoGrp);       }
-
+        try       { newCursosSelection.innerHTML += cursoGrp.outerHTML; }
+        catch (e) { newCursosSelection.innerHTML += cursoGrp.outerText; }
+    }
+    if (cursosSelection.hasChildNodes())
+        try       { replaceElement(newCursosSelection.outerHTML, cursosSelection); }
+        catch (e) { replaceElement(newCursosSelection.outerText, cursosSelection); }
+}
+/*
+{
+    var    cursosSelection = document.getElementById('curso');
+    var newCursosSelection = $(cursosSelection).clone(true, true);
+    removeAllChildsNodes(cursosSelection);
+    newCursosSelection[0].innerHTML = '';
+    for (var t = 0; t < cursos.tipos.length; t++)
+    {
+        var cursoGrp       = document.createElement('optgroup');
+            cursoGrp.label = cursos.tipos[t].nome;
+        for (var c = 0;  c < cursos.tipos[t].length; c++)
+        {
+            var cursoOpt      = document.createElement('option');
+                cursoOpt.text = cursos.tipos[t][c].nome;
+                cursoGrp.appendChild(cursoOpt);
+        }
+        try       {    cursosSelection.add(cursoGrp, null); }
+        catch (e) {    cursosSelection.add(cursoGrp);       }
         try       { newCursosSelection[0].innerHTML += cursoGrp.outerHTML; }
         catch (e) { newCursosSelection[0].innerHTML += cursoGrp.outerText; }
-//                    try { newCursosSelection.innerHTML += cursoGrp.outerHTML;     }
-//        catch (e) { try { newCursosSelection.innerHTML += cursoGrp.outerText;     }
-//        catch (e) { try { newCursosSelection.innerHTML += $('<div>').append(cursoGrp.clone()).html(); } }
-        //catch (e) {       newCursosSelection.innerHTML += getOuterHTML(cursoGrp); } }
     }
-    if (!cursosSelection.hasChildNodes())
+    if (cursosSelection.hasChildNodes())
         replaceElement(newCursosSelection[0].outerHTML, cursosSelection);
-        //replaceElement(outerHTML(newCursosSelection), cursosSelection);
-        //replaceElement(getOuterHTML(newCursosSelection), cursosSelection);
-    //{
-  //      try       { replaceElement(newCursosSelection.outerHTML, cursosSelection); }
-  //      catch (e) { replaceElement(newCursosSelection.outerText, cursosSelection); }
-//                    try { replaceElement(newCursosSelection.outerHTML, cursosSelection); }
-//        catch (e) { try { replaceElement(newCursosSelection.outerText, cursosSelection); }
-//        catch (e) {       replaceElement(newCursosSelection.outerText, cursosSelection); } }
-    //}
 }
+*/
