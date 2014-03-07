@@ -152,7 +152,7 @@ function updateForms()
 //        catch (e) { try { newCursosSelection.innerHTML += $('<div>').append(cursoGrp.clone()).html(); } }
         //catch (e) {       newCursosSelection.innerHTML += getOuterHTML(cursoGrp); } }
     }
-    if (cursosSelection.hasChildNodes())
+    if (!cursosSelection.hasChildNodes())
         replaceElement(newCursosSelection[0].outerHTML, cursosSelection);
         //replaceElement(outerHTML(newCursosSelection), cursosSelection);
         //replaceElement(getOuterHTML(newCursosSelection), cursosSelection);
