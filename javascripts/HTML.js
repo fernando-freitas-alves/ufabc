@@ -118,6 +118,7 @@ function updateForms()
 {
     //var cursosSelection = document.getElementById('curso');
     var cursosSelection = document.createElement('select');
+    cursosSelection.id  = 'curso';
     for (var t = 0; t < cursos.tipos.length; t++)
     {
       var cursoGrp   = document.createElement('optgroup');
