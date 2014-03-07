@@ -36,7 +36,7 @@ function insertElement(type, id, title, className, innerHTML, onclick, target, b
 function replaceElement(innerHTML, target)
 {
     var elementTarget = document.getElementById(target);
-    var type = innerHTML.indexOf('<td') != -1 ? 'tr' : 'div');
+    var type = innerHTML.indexOf('<td') != -1 ? 'tr' : 'div';
     var tmp  = document.createElement(type);
     tmp.innerHTML = innerHTML;
     var newElement,
