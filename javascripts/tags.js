@@ -33,6 +33,23 @@ function insertElement(type, id, title, className, innerHTML, onclick, target, b
     return null;
 }
 
+function replaceElement(innerHTML, target)
+{
+    var elementTarget = document.getElementById(target);
+    var type = innerHTML.indexOf('<td') != -1 ? 'tr' : 'div');
+    var tmp  = document.createElement(type);
+    tmp.innerHTML = innerHTML;
+    var newElement,
+        lastElement = elementTarget;
+    for (var i = tmp.childNodes.length; i > 0; i--)
+    {
+        newElement  = tmp.childNodes[i];
+        elementTarget.parentNode.insertBefore(newElement, lastElement);
+        lastElement = newElement;
+    }
+    elementTarget.parentNode.removeChild(elementTarget);
+}
+
 function removeElementsByClass(className)
 {
     var elements = document.getElementsByClassName(className);

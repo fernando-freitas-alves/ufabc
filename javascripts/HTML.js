@@ -51,10 +51,10 @@ function fillData(atualizar)
                           qn);
         }
     }
-    document.getElementById('CP').innerHTML = aluno.CP;
-    document.getElementById('CR').innerHTML = aluno.CR;
-    document.getElementById('CA').innerHTML = aluno.CA;
-    document.getElementById('I' ).innerHTML = aluno.I;
+    document.getElementById('CP').innerHTML = formatNumber(aluno.CP, 3);
+    document.getElementById('CR').innerHTML = formatNumber(aluno.CR, 3);
+    document.getElementById('CA').innerHTML = formatNumber(aluno.CA, 3);
+    document.getElementById('I' ).innerHTML = formatNumber(aluno.I , 3);
 }
 
 function clearData()
@@ -109,9 +109,15 @@ function changeRowColor(str)
                   '#conteudo tr.quadrimestre:hover td { color: initial; }');
 }
 
+function formatNumber(numberToStr, decimalPrec)
+{
+    return n.toFixed(decimalPrec).replace('.', ',');
+}
+
 function updateForms()
 {
-    var cursosSelection = document.getElementById('curso');
+    //var cursosSelection = document.getElementById('curso');
+    var cursosSelection = document.createElement('select');
     for (var t = 0; t < cursos.tipos.length; t++)
     {
       var cursoGrp   = document.createElement('optgroup');
@@ -123,6 +129,8 @@ function updateForms()
           cursoGrp.appendChild(cursoOpt);
       }
       try      { cursosSelection.add(cursoGrp, 0); }
-      catch(e) { cursosSelection.add(cursoGrp); }
+      catch(e) { cursosSelection.add(cursoGrp);    }
     }
+    try      { replaceElement(cursoGrp.outerHTML, 'curso'); }
+    catch(e) { replaceElement(cursoGrp.outerText, 'curso'); }
 }

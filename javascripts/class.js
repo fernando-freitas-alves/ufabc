@@ -28,13 +28,13 @@ function alunoClass(xmlDOC)
         this.analisarCurso(this.curso, atualizarDisc);
         this.calcularCR();
         this.calcularCA();
-        this.calcularI();
     }
     this.analisarCurso = function(cursoStr, atualizarDisc)
     {
         var curso = cursos.getCursoByName(cursoStr);
         if (atualizarDisc) this.atualizarCategorias(curso);
         this.calcularCP(curso);
+        this.calcularI();
     }
     this.atualizarCategorias = function(curso)
     {
@@ -75,7 +75,7 @@ function alunoClass(xmlDOC)
                 }
             }
         NC = curso.N_obr + curso.N_lim + curso.N_livre;
-        this.CP = ((n_obr + Math.min((curso.N_lim + curso.N_livre), n_lim + Math.min(n_livre, curso.N_livre))) / NC).toFixed(3).replace('.', ',');
+        this.CP = (n_obr + Math.min((curso.N_lim + curso.N_livre), n_lim + Math.min(n_livre, curso.N_livre))) / NC;
     }
     this.calcularCR = function()
     {
@@ -92,7 +92,7 @@ function alunoClass(xmlDOC)
                     den += disc.creditos;
                 }
             }
-        this.CR = (num / den).toFixed(3).replace('.', ',');
+        this.CR = num / den;
     }
     this.calcularCA = function()
     {
@@ -110,11 +110,11 @@ function alunoClass(xmlDOC)
                     den += disc.creditos;
                 }
             }
-        this.CA = (num / den).toFixed(3).replace('.', ',');
+        this.CA = num / den;
     }
     this.calcularI = function()
     {
-        this.I = (0.07 * this.CR + 0.63 * this.CP + 0.005 * this.T).toFixed(3).replace('.', ',');
+        this.I = (0.07 * this.CR) + (0.63 * this.CP) + (0.005 * this.T);
     }
     this.loadFromXML(xmlDOC);
 }
