@@ -28,7 +28,7 @@
 
 #conteudo table.CPk th
 {
-	background-color: #e0e0e0;
+	background-color: #E0E0E0;
     text-align:       center;
 }
 
@@ -45,9 +45,8 @@
     font-weight:   bold;
     border-bottom: dotted 1px;
 }
-/*
-#conteudo table.CPk tr.total
+
+#conteudo table.CPk tr.CPk_curso_atual
 {
-	font-weight:bold;
+	background: #E0E0E0;
 }
-*/

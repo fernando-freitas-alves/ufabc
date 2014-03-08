@@ -83,19 +83,19 @@ function fillData(atualizar)
 
 
     document.getElementById('livre_quantidade'   ).innerHTML =              aluno.livre_quantidade;
-    document.getElementById('livre_creditos'     ).innerHTML =              aluno.livre_creditos      + (cursoSelecionado ? ' / ' + cursoSelecionado.livre_creditos : '');
+    document.getElementById('livre_creditos'     ).innerHTML =              aluno.livre_creditos      + (cursoSelecionado ? '  /  ' + cursoSelecionado.livre_creditos : '');
     document.getElementById('livre_p_concluida'  ).innerHTML = formatNumber(aluno.livre_p_concluida * 100, 1);
-    document.getElementById('livre_carga_horaria').innerHTML =              aluno.livre_carga_horaria + (cursoSelecionado ? ' / ' + new disciplinaClass(null, null).calcularCargaHoraria(cursoSelecionado.livre_creditos) : '');
+    document.getElementById('livre_carga_horaria').innerHTML =              aluno.livre_carga_horaria + (cursoSelecionado ? '  /  ' + new disciplinaClass(null, null).calcularCargaHoraria(cursoSelecionado.livre_creditos) : '');
 
     document.getElementById('obrigatoria_quantidade'   ).innerHTML =              aluno.obrigatoria_quantidade;
-    document.getElementById('obrigatoria_creditos'     ).innerHTML =              aluno.obrigatoria_creditos      + (cursoSelecionado ? ' / ' + cursoSelecionado.obrigatoria_creditos : '');
+    document.getElementById('obrigatoria_creditos'     ).innerHTML =              aluno.obrigatoria_creditos      + (cursoSelecionado ? '  /  ' + cursoSelecionado.obrigatoria_creditos : '');
     document.getElementById('obrigatoria_p_concluida'  ).innerHTML = formatNumber(aluno.obrigatoria_p_concluida * 100, 1);
-    document.getElementById('obrigatoria_carga_horaria').innerHTML =              aluno.obrigatoria_carga_horaria + (cursoSelecionado ? ' / ' + new disciplinaClass(null, null).calcularCargaHoraria(cursoSelecionado.obrigatoria_creditos) : '');
+    document.getElementById('obrigatoria_carga_horaria').innerHTML =              aluno.obrigatoria_carga_horaria + (cursoSelecionado ? '  /  ' + new disciplinaClass(null, null).calcularCargaHoraria(cursoSelecionado.obrigatoria_creditos) : '');
 
     document.getElementById('opcao_limitada_quantidade'   ).innerHTML =              aluno.opcao_limitada_quantidade;
-    document.getElementById('opcao_limitada_creditos'     ).innerHTML =              aluno.opcao_limitada_creditos      + (cursoSelecionado ? ' / ' + cursoSelecionado.opcao_limitada_creditos: '');
+    document.getElementById('opcao_limitada_creditos'     ).innerHTML =              aluno.opcao_limitada_creditos      + (cursoSelecionado ? '  /  ' + cursoSelecionado.opcao_limitada_creditos: '');
     document.getElementById('opcao_limitada_p_concluida'  ).innerHTML = formatNumber(aluno.opcao_limitada_p_concluida * 100, 1);
-    document.getElementById('opcao_limitada_carga_horaria').innerHTML =              aluno.opcao_limitada_carga_horaria + (cursoSelecionado ? ' / ' + new disciplinaClass(null, null).calcularCargaHoraria(cursoSelecionado.opcao_limitada_creditos) : '');
+    document.getElementById('opcao_limitada_carga_horaria').innerHTML =              aluno.opcao_limitada_carga_horaria + (cursoSelecionado ? '  /  ' + new disciplinaClass(null, null).calcularCargaHoraria(cursoSelecionado.opcao_limitada_creditos) : '');
 
     if (cursoSelecionado)
     {
@@ -103,10 +103,10 @@ function fillData(atualizar)
         var curso_total_carga_horaria = new disciplinaClass(null, null).calcularCargaHoraria(curso_total_creditos);
     }
     document.getElementById('total_quantidade'   ).innerHTML = aluno.total_quantidade;
-    document.getElementById('total_creditos'     ).innerHTML = aluno.total_creditos      + (cursoSelecionado ? ' / ' + curso_total_creditos      : '');
+    document.getElementById('total_creditos'     ).innerHTML = aluno.total_creditos      + (cursoSelecionado ? '  /  ' + curso_total_creditos      : '');
     document.getElementById('total_p_concluida'  ).innerHTML = cursoSelecionado ? formatNumber(aluno.total_creditos / curso_total_creditos * 100, 1) : '';
     //document.getElementById('total_p_concluida'  ).innerHTML = formatNumber(aluno.total_p_concluida * 100, 1);
-    document.getElementById('total_carga_horaria').innerHTML = aluno.total_carga_horaria + (cursoSelecionado ? ' / ' + curso_total_carga_horaria : '');
+    document.getElementById('total_carga_horaria').innerHTML = aluno.total_carga_horaria + (cursoSelecionado ? '  /  ' + curso_total_carga_horaria : '');
 
 
     var c_acc = 0;
@@ -131,7 +131,7 @@ function fillData(atualizar)
             last = insertElement('tr',
                                  'CPk_curso ' + c_acc++,
                                  null,
-                                 'CPk_curso',
+                                 'CPk_curso' + (aluno.CPk[t][c].nome == cursoSelecionado.nome ? '_atual' : ''),
                                  innerHTML,
                                  null,
                                  CPk,
@@ -143,10 +143,11 @@ function fillData(atualizar)
 
 function clearData()
 {
-    removeElementsByClass('quadrimestre');
-    removeElementsByClass('disciplina'  );
-    removeElementsByClass('CPk_tipo'    );
-    removeElementsByClass('CPk_curso'   );
+    removeElementsByClass('quadrimestre'   );
+    removeElementsByClass('disciplina'     );
+    removeElementsByClass('CPk_tipo'       );
+    removeElementsByClass('CPk_curso'      );
+    removeElementsByClass('CPk_curso_atual');
 }
 
 function setDynamicState()
