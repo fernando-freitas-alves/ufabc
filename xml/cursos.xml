@@ -4,197 +4,197 @@
     <curso>
       <nome>Bacharelado em Ciência e Tecnologia</nome>
       <arquivo></arquivo>
-      <N_obg>90</N_obg>
-      <N_lim>57</N_lim>
-      <N_livre>43</N_livre>
+      <obrigatoria_creditos>90</obrigatoria_creditos>
+      <opcao_limitada_creditos>57</opcao_limitada_creditos>
+      <livre_creditos>43</livre_creditos>
     </curso>
     <curso>
       <nome>Bacharelado em Ciências e Humanidades</nome>
       <arquivo></arquivo>
-      <N_obg>72</N_obg>
-      <N_lim>80</N_lim>
-      <N_livre>38</N_livre>
+      <obrigatoria_creditos>72</obrigatoria_creditos>
+      <opcao_limitada_creditos>80</opcao_limitada_creditos>
+      <livre_creditos>38</livre_creditos>
     </curso>
   </tipo>
   <tipo nome="Engenharias">
     <curso>
       <nome>Engenharias</nome>
       <arquivo>Engenharias.xml</arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
+      <obrigatoria_creditos></obrigatoria_creditos>
+      <opcao_limitada_creditos></opcao_limitada_creditos>
+      <livre_creditos></livre_creditos>
     </curso>
     <curso>
       <nome>Engenharia Aeroespacial</nome>
       <arquivo>Aeroespacial.xml</arquivo>
-      <N_obg>202</N_obg>
-      <N_lim>68</N_lim>
-      <N_livre>30</N_livre>
+      <obrigatoria_creditos>202</obrigatoria_creditos>
+      <opcao_limitada_creditos>68</opcao_limitada_creditos>
+      <livre_creditos>30</livre_creditos>
     </curso>
     <curso>
       <nome>Engenharia Ambiental e Urbana</nome>
       <arquivo>Ambiental.xml</arquivo>
-      <N_obg>193</N_obg>
-      <N_lim>76</N_lim>
-      <N_livre>31</N_livre>
+      <obrigatoria_creditos>193</obrigatoria_creditos>
+      <opcao_limitada_creditos>76</opcao_limitada_creditos>
+      <livre_creditos>31</livre_creditos>
     </curso>
     <curso>
       <nome>Engenharia Biomédica</nome>
       <arquivo>Biomédica.xml</arquivo>
-      <N_obg>196</N_obg>
-      <N_lim>74</N_lim>
-      <N_livre>30</N_livre>
+      <obrigatoria_creditos>196</obrigatoria_creditos>
+      <opcao_limitada_creditos>74</opcao_limitada_creditos>
+      <livre_creditos>30</livre_creditos>
     </curso>
     <curso>
       <nome>Engenharia de Energia</nome>
       <arquivo>Energia.xml</arquivo>
-      <N_obg>185</N_obg>
-      <N_lim>85</N_lim>
-      <N_livre>30</N_livre>
+      <obrigatoria_creditos>185</obrigatoria_creditos>
+      <opcao_limitada_creditos>85</opcao_limitada_creditos>
+      <livre_creditos>30</livre_creditos>
     </curso>
     <curso>
       <nome>Engenharia de Gestão</nome>
       <arquivo>Gestão.xml</arquivo>
-      <N_obg>202</N_obg>
-      <N_lim>68</N_lim>
-      <N_livre>30</N_livre>
+      <obrigatoria_creditos>202</obrigatoria_creditos>
+      <opcao_limitada_creditos>68</opcao_limitada_creditos>
+      <livre_creditos>30</livre_creditos>
     </curso>
     <curso>
       <nome>Engenharia de Informação</nome>
       <arquivo>Informação.xml</arquivo>
-      <N_obg>197</N_obg>
-      <N_lim>73</N_lim>
-      <N_livre>30</N_livre>
+      <obrigatoria_creditos>197</obrigatoria_creditos>
+      <opcao_limitada_creditos>73</opcao_limitada_creditos>
+      <livre_creditos>30</livre_creditos>
     </curso>
     <curso>
       <nome>Engenharia de Instrumentação, Automação e Robótica</nome>
       <arquivo>IAR.xml</arquivo>
-      <N_obg>201</N_obg>
-      <N_lim>69</N_lim>
-      <N_livre>30</N_livre>
+      <obrigatoria_creditos>201</obrigatoria_creditos>
+      <opcao_limitada_creditos>69</opcao_limitada_creditos>
+      <livre_creditos>30</livre_creditos>
     </curso>
     <curso>
       <nome>Engenharia de Materiais</nome>
       <arquivo>Materiais.xml</arquivo>
-      <N_obg>180</N_obg>
-      <N_lim>90</N_lim>
-      <N_livre>30</N_livre>
+      <obrigatoria_creditos>180</obrigatoria_creditos>
+      <opcao_limitada_creditos>90</opcao_limitada_creditos>
+      <livre_creditos>30</livre_creditos>
     </curso>
   </tipo>
   <tipo nome="Bacharelados">
     <curso>
       <nome>Bacharelado em Ciências Biológicas</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
+      <obrigatoria_creditos></obrigatoria_creditos>
+      <opcao_limitada_creditos></opcao_limitada_creditos>
+      <livre_creditos></livre_creditos>
     </curso>
     <curso>
       <nome>Bacharelado em Ciência da Computação</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
+      <obrigatoria_creditos></obrigatoria_creditos>
+      <opcao_limitada_creditos></opcao_limitada_creditos>
+      <livre_creditos></livre_creditos>
     </curso>
     <curso>
       <nome>Bacharelado em Física</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
+      <obrigatoria_creditos></obrigatoria_creditos>
+      <opcao_limitada_creditos></opcao_limitada_creditos>
+      <livre_creditos></livre_creditos>
     </curso>
     <curso>
       <nome>Bacharelado em Matemática</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
+      <obrigatoria_creditos></obrigatoria_creditos>
+      <opcao_limitada_creditos></opcao_limitada_creditos>
+      <livre_creditos></livre_creditos>
     </curso>
     <curso>
       <nome>Bacharelado em Química</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
+      <obrigatoria_creditos></obrigatoria_creditos>
+      <opcao_limitada_creditos></opcao_limitada_creditos>
+      <livre_creditos></livre_creditos>
     </curso>
     <curso>
       <nome>Bacharelado em Neurociência</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
+      <obrigatoria_creditos></obrigatoria_creditos>
+      <opcao_limitada_creditos></opcao_limitada_creditos>
+      <livre_creditos></livre_creditos>
     </curso>
     <curso>
       <nome>Bacharelado em Filosofia</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
+      <obrigatoria_creditos></obrigatoria_creditos>
+      <opcao_limitada_creditos></opcao_limitada_creditos>
+      <livre_creditos></livre_creditos>
     </curso>
     <curso>
       <nome>Bacharelado em Ciências Econômicas</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
+      <obrigatoria_creditos></obrigatoria_creditos>
+      <opcao_limitada_creditos></opcao_limitada_creditos>
+      <livre_creditos></livre_creditos>
     </curso>
     <curso>
       <nome>Bacharelado em Planejamento Territorial</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
+      <obrigatoria_creditos></obrigatoria_creditos>
+      <opcao_limitada_creditos></opcao_limitada_creditos>
+      <livre_creditos></livre_creditos>
     </curso>
     <curso>
       <nome>Bacharelado em Políticas Públicas</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
+      <obrigatoria_creditos></obrigatoria_creditos>
+      <opcao_limitada_creditos></opcao_limitada_creditos>
+      <livre_creditos></livre_creditos>
     </curso>
     <curso>
       <nome>Bacharelado em Relações Internacionais</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
+      <obrigatoria_creditos></obrigatoria_creditos>
+      <opcao_limitada_creditos></opcao_limitada_creditos>
+      <livre_creditos></livre_creditos>
     </curso>
   </tipo>
   <tipo nome="Licenciaturas">
     <curso>
       <nome>Licenciatura em Ciências Biológicas</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
+      <obrigatoria_creditos></obrigatoria_creditos>
+      <opcao_limitada_creditos></opcao_limitada_creditos>
+      <livre_creditos></livre_creditos>
     </curso>
     <curso>
       <nome>Licenciatura em Física</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
+      <obrigatoria_creditos></obrigatoria_creditos>
+      <opcao_limitada_creditos></opcao_limitada_creditos>
+      <livre_creditos></livre_creditos>
     </curso>
     <curso>
       <nome>Licenciatura em Matemática</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
+      <obrigatoria_creditos></obrigatoria_creditos>
+      <opcao_limitada_creditos></opcao_limitada_creditos>
+      <livre_creditos></livre_creditos>
     </curso>
     <curso>
       <nome>Licenciatura em Química</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
+      <obrigatoria_creditos></obrigatoria_creditos>
+      <opcao_limitada_creditos></opcao_limitada_creditos>
+      <livre_creditos></livre_creditos>
     </curso>
     <curso>
       <nome>Licenciatura em Filosofia</nome>
       <arquivo></arquivo>
-      <N_obg></N_obg>
-      <N_lim></N_lim>
-      <N_livre></N_livre>
+      <obrigatoria_creditos></obrigatoria_creditos>
+      <opcao_limitada_creditos></opcao_limitada_creditos>
+      <livre_creditos></livre_creditos>
     </curso>
   </tipo>
 </graduacao>

@@ -3,8 +3,8 @@ function getElement(element)
     var elementObj = null;
     if (element !== null)
     {
-        if (typeof element == 'string' && element != '')  elementObj = document.getElementById(element);
-        else  if (typeof element == 'object')             elementObj = element;
+             if (typeof element == 'string' && element != '')  elementObj = document.getElementById(element);
+        else if (typeof element == 'object')                   elementObj = element;
     }
     return elementObj;
 }
@@ -33,13 +33,8 @@ function insertElement(type, id, title, className, innerHTML, onclick, target, b
     return null;
 }
 
-//function replaceElement(node, target)
 function replaceElement(outerHTML, target)
 {
-//    $(innerHTML).insertBefore(target);
-//    $(target).remove();
-
-    ///*
     var elementTarget = getElement(target);
 
     try       { elementTarget.outerHTML = outerHTML; }

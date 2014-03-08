@@ -4,13 +4,50 @@
 	padding:    0px;                                                 /* 10px  */
    	background: black url(../img/refresh-200.png) center no-repeat;  /* white */
 }
+
 #conteudo tr:hover td
 {
     color:      #FFFFFF;
 	background: #C0C0C0;
 }
-#conteudo tr.quadrimestre:hover td
+
+#conteudo tr.quadrimestre:hover td, #conteudo tr.CPk_tipo:hover td
 {
     color:      initial;
 	background: initial;
 }
+
+#conteudo table.CPk
+{
+    width:         100%;
+    padding:       5px;
+    border-bottom: solid 2px;
+    font-size:     12px;
+	text-align:    left;
+}
+
+#conteudo table.CPk th
+{
+	background-color: #e0e0e0;
+    text-align:       center;
+}
+
+#conteudo table.CPk td
+{
+    border-bottom: dashed 1px #aaa;
+    text-align:    center;
+}
+
+#conteudo table.CPk td.CPk_tipo_nome
+{
+    text-align:    center;
+    padding-top:   15px;
+    font-weight:   bold;
+    border-bottom: dotted 1px;
+}
+/*
+#conteudo table.CPk tr.total
+{
+	font-weight:bold;
+}
+*/

@@ -23,7 +23,7 @@ onload = function()
 function cursoOnChange()
 {
     var curso = this.value;
-    aluno.analisarCurso(curso, true);
+    aluno.analisar(curso, true, false);
     carregarPortalDoAluno(true);
 }
 //});

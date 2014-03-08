@@ -4,13 +4,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <title>UFABC - Dados do portal do aluno</title>
-  <link rel="stylesheet" href="stylesheets/portal-do-aluno-backup.css">
+  <!--
   <link rel="stylesheet" href="http://aluno.ufabc.edu.br/stylesheets/style.css">
+  -->
+  <link rel="stylesheet" href="stylesheets/portal-do-aluno-backup.css">
   <link rel="stylesheet" href="stylesheets/portal-do-aluno-modificada.css">
   <link rel="stylesheet" href="stylesheets/fade.css">
-  <!--->
-  <script type="text/javascript" src="javascripts/jquery-1.11.0.min.js"></script>
-  <!---->
   <script type="text/javascript" src="javascripts/main.js"></script>
 </head>
 <body>
@@ -57,12 +56,14 @@
           <tr>
             <th>Coeficiente de progressão (CP)</th>
             <th>Coeficiente de afinidade (I)</th>
+            <th>Quadrimestres cursados (T)</th>
             <th>Coeficiente de rendimento (CR)</th>
             <th>Coeficiente de aproveitamento (CA)</th>
           </tr>
           <tr>
             <td><span id="CP"></span></td>
             <td><span id="I"></span></td>
+            <td><span id="T"></span></td>
             <td><span id="CR"></span></td>
             <td><span id="CA"></span></td>
           </tr>
@@ -138,6 +139,14 @@
             <td><span id="total_creditos"     ></span></td>
             <td><span id="total_p_concluida"  ></span></td>
             <td><span id="total_carga_horaria"></span></td>
+          </tr>
+        </table>
+
+        <!-- CPk -->
+        <table class="CPk">
+          <tr class="cabecalho2">
+            <th>CPk</th>
+            <th style="text-align: left">Curso</th>
           </tr>
         </table>
       </div>
